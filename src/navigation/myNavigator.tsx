@@ -2,12 +2,8 @@ import HomeScreen from '@/screens/home';
 import LoginScreen from '@/screens/login';
 
 export const RouteConfigs = {
-  Home: {
-    screen: HomeScreen,
-  },
-  Login: {
-    screen: LoginScreen,
-  },
+  Home: HomeScreen,
+  Login: LoginScreen,
 };
 
 export const NavigatorConfig = {

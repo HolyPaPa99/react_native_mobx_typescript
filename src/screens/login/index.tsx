@@ -8,7 +8,7 @@ const LoginScreen = (props: any) => {
       </View>
       <View>
         <Button
-          onPress={e => props.navigation.navigate('Home')}
+          onPress={() => props.navigation.navigate('Home')}
           title="Go to Home"
         />
       </View>

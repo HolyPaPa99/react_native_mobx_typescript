@@ -10,8 +10,7 @@ const HomeScreen = inject('todoStore')(
         </View>
         <View>
           <Button
-            onPress={e => {
-              e.preventDefault();
+            onPress={() => {
               props.navigation.navigate('Login');
             }}
             title="Go to Login"
