@@ -15,7 +15,7 @@ import stores from '@/models';
 import {RouteConfigs, NavigatorConfig} from '@/navigation/myNavigator';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
-const navigator = createBottomTabNavigator(RouteConfigs);
+const navigator = createStackNavigator(RouteConfigs, NavigatorConfig);
 const AppContainer = createAppContainer(navigator);
 
 const App = () => {

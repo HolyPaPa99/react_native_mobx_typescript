@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Button} from 'react-native';
-const LoginScreen = (props: any) => {
+import {NavigationStackScreenProps} from 'react-navigation-stack';
+const LoginScreen = ({ navigation }: NavigationStackScreenProps) => {
   return (
     <SafeAreaView>
       <View>
@@ -8,7 +9,7 @@ const LoginScreen = (props: any) => {
       </View>
       <View>
         <Button
-          onPress={() => props.navigation.navigate('Home')}
+          onPress={() => navigation.navigate('Home')}
           title="Go to Home"
         />
       </View>
