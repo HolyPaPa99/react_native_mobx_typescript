@@ -9,9 +9,14 @@
 import React from 'react';
 import {Provider} from 'mobx-react';
 import 'react-native-gesture-handler';
-import stores from './src/models';
-import Hello from './src/screens/hello';
-import AppContainer from './src/navigation'
+import {createAppContainer} from 'react-navigation';
+import {createStackNavigator} from 'react-navigation-stack';
+import stores from '@/models';
+import {RouteConfigs, NavigatorConfig} from '@/navigation/myNavigator';
+import {createBottomTabNavigator} from 'react-navigation-tabs'
+
+const navigator = createBottomTabNavigator(RouteConfigs);
+const AppContainer = createAppContainer(navigator);
 
 const App = () => {
   return (

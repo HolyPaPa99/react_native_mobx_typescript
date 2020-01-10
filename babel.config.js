@@ -12,6 +12,15 @@ module.exports = {
         loose: true,
       },
     ],
+    [
+      'module-resolver',
+      {
+        root: ['./'],
+        alias: {
+          '@': './src/',
+        }
+      }
+   ]
   ],
   presets: ['module:metro-react-native-babel-preset'],
 };
