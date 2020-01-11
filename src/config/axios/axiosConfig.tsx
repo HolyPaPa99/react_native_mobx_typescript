@@ -1,7 +1,7 @@
 const Qs = require('qs');
 const http = require('http');
 const https = require('https');
-import {AxiosRequestConfig, ResponseType} from 'axios';
+import {ResponseType} from 'axios';
 
 export default {
   // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
