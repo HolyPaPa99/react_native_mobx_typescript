@@ -4,8 +4,14 @@ import requestInterceptor from '@/config/axios/requestInterceptor';
 import responseInterceptor from '@/config/axios/responseInterceptor';
 
 const instance = axios.create(axiosConfig);
-instance.interceptors.request.use(requestInterceptor);
-instance.interceptors.response.use(responseInterceptor);
+instance.interceptors.request.use(
+  requestInterceptor.beforeRequest,
+  requestInterceptor.error,
+);
+instance.interceptors.response.use(
+  responseInterceptor.succeed,
+  responseInterceptor.error,
+);
 
 export default {
   get: (url: string, config: object) => {
