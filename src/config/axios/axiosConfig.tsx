@@ -1,6 +1,7 @@
 const Qs = require('qs');
 const http = require('http');
 const https = require('https');
+import {AxiosRequestConfig, ResponseType} from 'axios';
 
 export default {
   // `baseURL` 将自动加在 `url` 前面，除非 `url` 是一个绝对 URL。
@@ -11,7 +12,7 @@ export default {
   // 只能用在 'PUT', 'POST' 和 'PATCH' 这几个请求方法
   // 后面数组中的函数必须返回一个字符串，或 ArrayBuffer，或 Stream
   transformRequest: [
-    function(data: object, headers: object) {
+    (data: any, headers: any): any => {
       // 对 data 进行任意转换处理
       return data;
     },
@@ -19,7 +20,7 @@ export default {
 
   // `transformResponse` 在传递给 then/catch 前，允许修改响应数据
   transformResponse: [
-    function(data: object) {
+    (data: any, header: any): any => {
       // 对 data 进行任意转换处理
       return data;
     },
@@ -30,7 +31,7 @@ export default {
 
   // `paramsSerializer` 是一个负责 `params` 序列化的函数
   // (e.g. https://www.npmjs.com/package/qs, http://api.jquery.com/jquery.param/)
-  paramsSerializer: function(params: object) {
+  paramsSerializer: (params: any): string => {
     return Qs.stringify(params, {arrayFormat: 'brackets'});
   },
 
@@ -43,9 +44,9 @@ export default {
 
   // `adapter` 允许自定义处理请求，以使测试更轻松
   // 返回一个 promise 并应用一个有效的响应 (查阅 [response docs](#response-api)).
-  adapter: function(config: object) {
-    /* ... */
-  },
+  //adapter: (config: AxiosRequestConfig) => {
+  /* ... */
+  //},
 
   // `auth` 表示应该使用 HTTP 基础验证，并提供凭据
   // 这将设置一个 `Authorization` 头，覆写掉现有的任意使用 `headers` 设置的自定义 `Authorization`头
@@ -55,7 +56,7 @@ export default {
   },
 
   // `responseType` 表示服务器响应的数据类型，可以是 'arraybuffer', 'blob', 'document', 'json', 'text', 'stream'
-  responseType: 'json', // default
+  responseType: 'json' as ResponseType, // default
 
   // `responseEncoding` indicates encoding to use for decoding responses
   // Note: Ignored for `responseType` of 'stream' or client-side requests
@@ -68,12 +69,12 @@ export default {
   xsrfHeaderName: 'X-XSRF-TOKEN', // default
 
   // `onUploadProgress` 允许为上传处理进度事件
-  onUploadProgress: function(progressEvent: object) {
+  onUploadProgress: (progressEvent: any): void => {
     // Do whatever you want with the native progress event
   },
 
   // `onDownloadProgress` 允许为下载处理进度事件
-  onDownloadProgress: function(progressEvent: object) {
+  onDownloadProgress: (progressEvent: any): void => {
     // 对原生进度事件的处理
   },
 
@@ -81,7 +82,7 @@ export default {
   maxContentLength: 2000,
 
   // `validateStatus` 定义对于给定的HTTP 响应状态码是 resolve 或 reject  promise 。如果 `validateStatus` 返回 `true` (或者设置为 `null` 或 `undefined`)，promise 将被 resolve; 否则，promise 将被 rejecte
-  validateStatus: function(status: number) {
+  validateStatus: (status: number): boolean => {
     return status >= 200 && status < 300; // default
   },
 
