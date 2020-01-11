@@ -2,6 +2,7 @@ import axios from 'axios';
 import axiosConfig from '@/config/axios/axiosConfig';
 import requestInterceptor from '@/config/axios/requestInterceptor';
 import responseInterceptor from '@/config/axios/responseInterceptor';
+import {AxiosRequestConfig} from 'axios';
 
 const instance = axios.create(axiosConfig);
 instance.interceptors.request.use(
@@ -12,27 +13,28 @@ instance.interceptors.response.use(
   responseInterceptor.succeed,
   responseInterceptor.error,
 );
-
-export default {
-  get: (url: string, config: object) => {
+class Api {
+  static get(url: string, config: AxiosRequestConfig) {
     return instance.get(url, config);
-  },
-  delete: (url: string, config: object) => {
+  }
+  static delete(url: string, config: AxiosRequestConfig) {
     return instance.delete(url, config);
-  },
-  head: (url: string, config: object) => {
+  }
+  static head(url: string, config: AxiosRequestConfig) {
     return instance.head(url, config);
-  },
-  options: (url: string, config: object) => {
+  }
+  static options(url: string, config: AxiosRequestConfig) {
     return instance.options(url, config);
-  },
-  post: (url: string, params: object, config: object) => {
+  }
+  static post(url: string, params: any, config: AxiosRequestConfig) {
     return instance.post(url, params, config);
-  },
-  put: (url: string, params: object, config: object) => {
+  }
+  static put(url: string, params: any, config: AxiosRequestConfig) {
     return instance.put(url, params, config);
-  },
-  patch: (url: string, params: object, config: object) => {
+  }
+  static patch(url: string, params: any, config: AxiosRequestConfig) {
     return instance.patch(url, params, config);
-  },
-};
+  }
+}
+
+export default Api;
