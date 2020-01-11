@@ -1,5 +1,6 @@
 module.exports = {
   plugins: [
+    ['@babel/plugin-transform-flow-strip-types'],
     [
       '@babel/plugin-proposal-decorators',
       {
@@ -18,9 +19,9 @@ module.exports = {
         root: ['./'],
         alias: {
           '@': './src/',
-        }
-      }
-   ]
+        },
+      },
+    ],
   ],
   presets: ['module:metro-react-native-babel-preset'],
 };
