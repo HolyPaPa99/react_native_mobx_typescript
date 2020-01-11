@@ -5,12 +5,20 @@ import {createBottomTabNavigator} from 'react-navigation-tabs';
 
 const RouteConfigs = {
   Home: {
-    screen: createBottomTabNavigator({
-      Home1: HomeScreen,
-      Login1: LoginScreen,
-      Home2: HomeScreen,
-      Login2: LoginScreen,
-    }),
+    screen: createBottomTabNavigator(
+      {
+        Home1: HomeScreen,
+        Login1: LoginScreen,
+        Home2: HomeScreen,
+        Login2: LoginScreen,
+      },
+      {
+        tabBarOptions: {
+          activeTintColor: 'tomato',
+          inactiveTintColor: 'gray',
+        },
+      },
+    ),
     navigationOptions: {
       headerShown: false,
     },
