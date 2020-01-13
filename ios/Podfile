@@ -34,6 +34,7 @@ target 'react_native_mobx_typescript' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
+
   target 'react_native_mobx_typescriptTests' do
     inherit! :search_paths
     # Pods for testing

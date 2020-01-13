@@ -2,7 +2,7 @@ import React from 'react';
 import {IntlProvider} from 'react-intl';
 import en from './lang/en_US';
 
-function withIntl(WrappedComponent: React.ComponentType) {
+export function withIntl(WrappedComponent: React.ComponentType) {
   return class extends React.Component {
     render() {
       return (
@@ -13,4 +13,3 @@ function withIntl(WrappedComponent: React.ComponentType) {
     }
   };
 }
-export default withIntl;
