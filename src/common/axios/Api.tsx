@@ -1,7 +1,7 @@
 import axios from 'axios';
-import axiosConfig from '@/config/axios/axiosConfig';
-import requestInterceptor from '@/config/axios/requestInterceptor';
-import responseInterceptor from '@/config/axios/responseInterceptor';
+import axiosConfig from '@/common/axios/axiosConfig';
+import requestInterceptor from '@/common/axios/requestInterceptor';
+import responseInterceptor from '@/common/axios/responseInterceptor';
 import {AxiosRequestConfig} from 'axios';
 
 const instance = axios.create(axiosConfig);
