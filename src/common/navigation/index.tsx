@@ -8,9 +8,9 @@ const RouteConfigs = {
     screen: createBottomTabNavigator(
       {
         Home1: HomeScreen,
-        Login1: LoginScreen,
         Home2: HomeScreen,
-        Login2: LoginScreen,
+        Home3: HomeScreen,
+        Home4: HomeScreen,
       },
       {
         tabBarOptions: {
