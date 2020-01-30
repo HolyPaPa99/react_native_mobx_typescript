@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
-import Iconfont from '@/common/iconfont/Iconfont';
+import * as Iconfont from '@/common/iconfont/Iconfont';
 
 export default class CountrySelect extends React.Component {
   render() {
@@ -9,8 +9,9 @@ export default class CountrySelect extends React.Component {
         style={{
           flexGrow: 2,
           flexDirection: 'row',
-          borderBottomWidth: 1,
-          borderBottomColor: '#D8D8D8',
+          borderWidth: 1,
+          borderColor: '#D8D8D8',
+          borderRadius: 5,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
@@ -54,11 +55,7 @@ export default class CountrySelect extends React.Component {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Iconfont
-              name="right-indicator"
-              size={16}
-              color="rgba(60,60,67,0.3)"
-            />
+            <Iconfont.RightIndicator/>
           </View>
         </TouchableOpacity>
       </View>

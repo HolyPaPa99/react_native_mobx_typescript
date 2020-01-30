@@ -13,7 +13,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		14AB9E3B23E03FD8008D0953 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14AB9E3A23E03FD8008D0953 /* iconfont.ttf */; };
+		14AB9E4523E2A63D008D0953 /* iconfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14AB9E4423E2A63D008D0953 /* iconfont.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -54,7 +54,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = react_native_mobx_typescript/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = react_native_mobx_typescript/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = react_native_mobx_typescript/main.m; sourceTree = "<group>"; };
-		14AB9E3A23E03FD8008D0953 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = ../../../../../Downloads/font_81f2vo82lv/iconfont.ttf; sourceTree = "<group>"; };
+		14AB9E4423E2A63D008D0953 /* iconfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = iconfont.ttf; path = ../../src/common/iconfont/iconfont.ttf; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* react_native_mobx_typescript-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "react_native_mobx_typescript-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* react_native_mobx_typescript-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "react_native_mobx_typescript-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32D21F44746A9DB0B1BC359E /* libPods-react_native_mobx_typescript-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-react_native_mobx_typescript-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,7 +141,7 @@
 		14AB9E3923E03F28008D0953 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				14AB9E3A23E03FD8008D0953 /* iconfont.ttf */,
+				14AB9E4423E2A63D008D0953 /* iconfont.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -350,7 +350,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				14AB9E3B23E03FD8008D0953 /* iconfont.ttf in Resources */,
+				14AB9E4523E2A63D008D0953 /* iconfont.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

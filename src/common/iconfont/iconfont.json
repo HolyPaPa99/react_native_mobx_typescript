@@ -13,5 +13,11 @@
     "view": 58902,
     "view-hide": 58903,
     "lock": 58904,
-    "camera": 58905
+    "camera": 58905,
+    "phone": 60333,
+    "close-filled": 58961,
+    "twitter": 58974,
+    "wechat": 58975,
+    "password-filled": 59270,
+    "account-filled": 59306
 }

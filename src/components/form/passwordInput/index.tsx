@@ -1,53 +1,42 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import Iconfont from '@/common/iconfont/Iconfont';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import * as Iconfont from '@/common/iconfont/Iconfont';
 
 export default class PasswordInput extends React.Component {
   render() {
     return (
       <View
         style={{
-          flexGrow: 3,
+          flexGrow: 4,
           flexDirection: 'row',
-          borderBottomWidth: 1,
-          borderBottomColor: '#D8D8D8',
+          borderWidth: 1,
+          borderColor: '#D8D8D8',
+          borderRadius: 5,
+          marginTop: 5,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
+        <Iconfont.PasswordFilled />
         <View
           style={{
-            width: 48,
+            flex: 1,
             height: 48,
-            alignItems: 'center',
             justifyContent: 'center',
           }}>
-          <Iconfont name="lock" size={16} color="rgba(60,60,67,0.3)" />
-        </View>
-        <View
-          style={{
-            width: 181,
-            height: 48,
-          }}>
-          <Text
+          <TextInput
+            placeholder="请输入密码"
+            placeholderTextColor="rgba(60,60,67,0.3)"
             style={{
               fontSize: 16,
               fontWeight: 'normal',
-              color: 'rgba(60,60,67,0.3)',
-              lineHeight: 48,
-              paddingLeft: 13,
-            }}>
-            请输入密码
-          </Text>
+            }}
+          />
         </View>
-        <View
-          style={{
-            width: 48,
-            height: 48,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Iconfont name="view" size={16} color="rgba(60,60,67,0.3)" />
-        </View>
+        <Iconfont.CloseFilled
+          style={{width: 18}}
+          color={'rgba(239,239,244,1)'}
+        />
+        <Iconfont.ViewShow />
       </View>
     );
   }

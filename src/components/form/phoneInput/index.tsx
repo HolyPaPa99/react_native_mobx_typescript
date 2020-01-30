@@ -1,73 +1,34 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import Iconfont from '@/common/iconfont/Iconfont';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import * as Iconfont from '@/common/iconfont/Iconfont';
+import * as formStyleSheet from '@/components/form/FormStyleSheet';
 
-export default class PhoneInput extends React.Component {
+export default class PhoneInput extends React.Component<{}, {}> {
   render() {
     return (
       <View
         style={{
           flexGrow: 4,
           flexDirection: 'row',
-          borderBottomWidth: 1,
-          borderBottomColor: '#D8D8D8',
+          borderWidth: 1,
+          borderColor: '#D8D8D8',
+          borderRadius: 5,
+          marginTop: 5,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-        <View
-          style={{
-            width: 48,
-            height: 48,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Iconfont name="person" size={16} color="rgba(60,60,67,0.3)" />
+        <Iconfont.Phone />
+        <View style={formStyleSheet.styleSheet.labelContainer}>
+          <Text style={formStyleSheet.styleSheet.labelText}>+86</Text>
         </View>
-        <View
-          style={{
-            height: 48,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: 'normal',
-              color: '#5EA2EC',
-            }}>
-            +86
-          </Text>
-        </View>
-        <View
-          style={{
-            height: 48,
-            flex: 1,
-            flexDirection: 'row',
-          }}>
-          <Text
-            style={{
-              fontSize: 16,
-              fontWeight: 'normal',
-              color: 'rgba(60,60,67,0.3)',
-              lineHeight: 48,
-              paddingLeft: 13,
-            }}>
-            请输入手机号码
-          </Text>
-        </View>
-        <View
-          style={{
-            width: 48,
-            height: 48,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Iconfont
-            name="right-indicator"
-            size={16}
-            color="rgba(60,60,67,0.3)"
+        <View style={formStyleSheet.styleSheet.textInputContainer}>
+          <TextInput
+            placeholder="请输入手机号码"
+            placeholderTextColor={formStyleSheet.placeholderTextColor}
+            style={formStyleSheet.styleSheet.textInput}
           />
         </View>
+        <Iconfont.CloseFilled color={'rgba(239,239,244,1)'} />
       </View>
     );
   }
