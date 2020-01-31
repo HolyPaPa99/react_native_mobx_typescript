@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import * as formStyleSheet from '@/components/form/FormStyleSheet';
+import Label from '@/components/form/label';
 
 export default class PhoneInput extends React.Component<{}, {}> {
   render() {
@@ -18,9 +19,7 @@ export default class PhoneInput extends React.Component<{}, {}> {
           justifyContent: 'center',
         }}>
         <Iconfont.Phone />
-        <View style={formStyleSheet.styleSheet.labelContainer}>
-          <Text style={formStyleSheet.styleSheet.labelText}>+86</Text>
-        </View>
+        <Label name="+86" style={{paddingHorizontal: 0}}/>
         <View style={formStyleSheet.styleSheet.textInputContainer}>
           <TextInput
             placeholder="请输入手机号码"

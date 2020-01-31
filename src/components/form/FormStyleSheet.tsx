@@ -14,14 +14,4 @@ export const styleSheet = StyleSheet.create({
     fontWeight: 'normal',
     paddingHorizontal: 10,
   },
-  labelContainer: {
-    height: 48,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  labelText: {
-    fontSize: 16,
-    fontWeight: 'normal',
-    color: '#5EA2EC',
-  },
 });

@@ -182,21 +182,21 @@ export const Person = (props: {
   />
 );
 
-export const ViewShow = (props: {
+export const EyeOpen = (props: {
   style?: any;
   size?: Number | undefined;
   color?: string | undefined;
 }) => (
-  <Icon name="view" style={props.style} size={props.size} color={props.color} />
+  <Icon name="eye-open" style={props.style} size={props.size} color={props.color} />
 );
 
-export const ViewHide = (props: {
+export const EyeClose = (props: {
   style?: any;
   size?: Number | undefined;
   color?: string | undefined;
 }) => (
   <Icon
-    name="view-hide"
+    name="eye-close"
     style={props.style}
     size={props.size}
     color={props.color}
@@ -271,7 +271,7 @@ export const PasswordFilled = (props: {
   <Icon
     name="password-filled"
     style={props.style}
-    size={props.size||20}
+    size={props.size || 20}
     color={props.color}
   />
 );

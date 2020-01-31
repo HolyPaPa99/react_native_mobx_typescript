@@ -36,7 +36,7 @@ export default class PasswordInput extends React.Component {
           style={{width: 18}}
           color={'rgba(239,239,244,1)'}
         />
-        <Iconfont.ViewShow />
+        <Iconfont.EyeOpen />
       </View>
     );
   }
