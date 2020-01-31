@@ -1,6 +1,12 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
+import {
+  itemHight,
+  fontSize,
+  placeholderTextColor,
+} from '@/components/form/FormStyle';
+import * as ScreenUtil from '@/common/utils/ScreenUtil';
 
 export default class PasswordInput extends React.Component {
   render() {
@@ -20,23 +26,26 @@ export default class PasswordInput extends React.Component {
         <View
           style={{
             flex: 1,
-            height: 48,
+            height: itemHight,
             justifyContent: 'center',
           }}>
           <TextInput
             placeholder="请输入密码"
-            placeholderTextColor="rgba(60,60,67,0.3)"
+            placeholderTextColor={placeholderTextColor}
             style={{
-              fontSize: 16,
-              fontWeight: 'normal',
+              fontSize: fontSize,
             }}
           />
         </View>
-        <Iconfont.CloseFilled
-          style={{width: 18}}
-          color={'rgba(239,239,244,1)'}
-        />
-        <Iconfont.EyeOpen />
+        <TouchableOpacity>
+          <Iconfont.CloseFilled
+            style={{width: ScreenUtil.scaleSize(18)}}
+            color={'rgba(239,239,244,1)'}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Iconfont.EyeOpen />
+        </TouchableOpacity>
       </View>
     );
   }
