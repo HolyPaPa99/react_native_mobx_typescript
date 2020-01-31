@@ -19,14 +19,14 @@ const styleSheet = StyleSheet.create({
 export const Icon = (props: {
   style?: any;
   name: string;
-  size?: Number | 18; //default fontSize
-  color?: string | 'rgba(60,60,67,0.3)'; //default fontColor
+  size?: Number; //default fontSize
+  color?: string; //default fontColor
 }) => (
   <View style={{...styleSheet.iconFontContainer, ...props.style}}>
     <IconSet
       name={props.name}
       size={Number(props.size || 18)}
-      color={props.color || 'rgba(60,60,67,0.3)'}
+      color={props.color || '#D8D8D8'}
     />
   </View>
 );
@@ -187,7 +187,12 @@ export const EyeOpen = (props: {
   size?: Number | undefined;
   color?: string | undefined;
 }) => (
-  <Icon name="eye-open" style={props.style} size={props.size} color={props.color} />
+  <Icon
+    name="eye-open"
+    style={props.style}
+    size={props.size || 16}
+    color={props.color}
+  />
 );
 
 export const EyeClose = (props: {
@@ -198,7 +203,7 @@ export const EyeClose = (props: {
   <Icon
     name="eye-close"
     style={props.style}
-    size={props.size}
+    size={props.size || 16}
     color={props.color}
   />
 );

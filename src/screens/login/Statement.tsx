@@ -8,7 +8,6 @@ export default class Statement extends React.Component {
     return (
       <View
         style={{
-          //width: ScreenUtil.scaleSize(414),
           height: ScreenUtil.scaleSize(212),
           justifyContent: 'center',
           alignItems: 'center',

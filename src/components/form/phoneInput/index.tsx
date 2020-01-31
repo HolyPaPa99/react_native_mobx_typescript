@@ -1,22 +1,24 @@
 import React from 'react';
 import {View, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
-import {InputStyle, placeholderTextColor} from '@/components/form/FormStyle';
+import {
+  InputStyle,
+  placeholderTextColor,
+  ComponentStyle,
+} from '@/components/form/FormStyle';
 import Label from '@/components/form/label';
 
-export default class PhoneInput extends React.Component<{}, {}> {
+export default class PhoneInput extends React.Component<{style?: any}, {}> {
   render() {
     return (
       <View
         style={{
-          flexGrow: 4,
-          flexDirection: 'row',
-          borderWidth: 1,
-          borderColor: '#D8D8D8',
-          borderRadius: 5,
-          marginTop: 5,
-          alignItems: 'center',
-          justifyContent: 'center',
+          ...{
+            flexGrow: 4,
+            flexDirection: 'row',
+          },
+          ...ComponentStyle.container,
+          ...this.props.style,
         }}>
         <Iconfont.Phone />
         <Label name="+86" style={{paddingHorizontal: 0}} />
@@ -27,8 +29,8 @@ export default class PhoneInput extends React.Component<{}, {}> {
             style={InputStyle.textInput}
           />
         </View>
-        <TouchableOpacity>
-          <Iconfont.CloseFilled color={'rgba(239,239,244,1)'} />
+        <TouchableOpacity style={{display:'none'}}>
+          <Iconfont.CloseFilled />
         </TouchableOpacity>
       </View>
     );

@@ -5,22 +5,21 @@ import {
   itemHight,
   fontSize,
   placeholderTextColor,
+  ComponentStyle,
 } from '@/components/form/FormStyle';
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
 
-export default class PasswordInput extends React.Component {
+export default class PasswordInput extends React.Component<{style?: any}, {}> {
   render() {
     return (
       <View
         style={{
-          flexGrow: 4,
-          flexDirection: 'row',
-          borderWidth: 1,
-          borderColor: '#D8D8D8',
-          borderRadius: 5,
-          marginTop: 5,
-          alignItems: 'center',
-          justifyContent: 'center',
+          ...{
+            flexGrow: 4,
+            flexDirection: 'row',
+          },
+          ...ComponentStyle.container,
+          ...this.props.style,
         }}>
         <Iconfont.PasswordFilled />
         <View
@@ -37,11 +36,8 @@ export default class PasswordInput extends React.Component {
             }}
           />
         </View>
-        <TouchableOpacity>
-          <Iconfont.CloseFilled
-            style={{width: ScreenUtil.scaleSize(18)}}
-            color={'rgba(239,239,244,1)'}
-          />
+        <TouchableOpacity style={{display: 'none'}}>
+          <Iconfont.CloseFilled style={{width: ScreenUtil.scaleSize(18)}} />
         </TouchableOpacity>
         <TouchableOpacity>
           <Iconfont.EyeOpen />

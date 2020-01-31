@@ -44,7 +44,14 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
               }}>
               <SelectCountry />
               <PhoneInput />
-              <PasswordInput />
+              <PasswordInput
+                style={{
+                  borderWidth: 1,
+                  borderColor: '#D8D8D8',
+                  borderRadius: 5,
+                  marginTop: 5,
+                }}
+              />
             </View>
             <TouchableOpacity
               style={{
