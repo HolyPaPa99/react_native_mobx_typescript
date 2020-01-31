@@ -4,7 +4,7 @@ import {NavigationStackScreenProps} from 'react-navigation-stack';
 
 import Statement from './Statement';
 import Logo from './Logo';
-import CountrySelect from '@/components/form/countrySelect';
+import SelectCountry from '@/components/form/selectCountry';
 import PhoneInput from '@/components/form/phoneInput';
 import PasswordInput from '@/components/form/passwordInput';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
@@ -42,7 +42,7 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
                 marginLeft: 27,
                 marginRight: 27,
               }}>
-              <CountrySelect />
+              <SelectCountry />
               <PhoneInput />
               <PasswordInput />
             </View>
