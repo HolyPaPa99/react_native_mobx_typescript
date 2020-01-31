@@ -43,7 +43,7 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
                 marginRight: 27,
               }}>
               <SelectCountry />
-              <PhoneInput />
+              <PhoneInput areaCode="+86" />
               <PasswordInput
                 style={{
                   borderWidth: 1,

@@ -25,13 +25,14 @@ export const ComponentStyle = StyleSheet.create({
 
 export const InputStyle = StyleSheet.create({
   container: {
-    height: itemHight,
     flex: 1,
-    flexDirection: 'row',
+    height: itemHight,
+    justifyContent: 'center',
   },
   textInput: {
     fontSize: fontSize,
     paddingHorizontal: inputPaddingHorizontal,
+    color: fontColor,
   },
 });
 
