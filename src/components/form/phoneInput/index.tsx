@@ -8,7 +8,7 @@ import {
 } from '@/components/form/FormStyle';
 import Label from '@/components/form/label';
 
-export default class PhoneInput extends React.Component<
+export default class extends React.Component<
   {style?: any; defaultValue?: string | undefined; areaCode?: string},
   {value: string}
 > {

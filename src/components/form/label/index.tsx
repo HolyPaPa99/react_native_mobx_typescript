@@ -3,16 +3,18 @@ import {View, Text} from 'react-native';
 
 import {LabelStyle} from '@/components/form/FormStyle';
 
-const Label = (props: {
-  name: string | undefined;
+export default class extends React.Component<{
+  name?: string | undefined;
   style?: any;
   textStyle?: any;
-}) => {
-  return (
-    <View style={{...LabelStyle.container, ...props.style}}>
-      <Text style={{...LabelStyle.text, ...props.textStyle}}>{props.name}</Text>
-    </View>
-  );
-};
-
-export default Label;
+}> {
+  render() {
+    return (
+      <View style={{...LabelStyle.container, ...this.props.style}}>
+        <Text style={{...LabelStyle.text, ...this.props.textStyle}}>
+          {this.props.name}
+        </Text>
+      </View>
+    );
+  }
+}

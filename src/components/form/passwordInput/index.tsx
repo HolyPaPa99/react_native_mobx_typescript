@@ -9,7 +9,7 @@ import {
 } from '@/components/form/FormStyle';
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
 
-export default class PasswordInput extends React.Component<{style?: any}, {}> {
+export default class extends React.Component<{style?: any}, {}> {
   render() {
     return (
       <View

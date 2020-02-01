@@ -4,9 +4,7 @@ import {NavigationStackScreenProps} from 'react-navigation-stack';
 
 import Statement from './Statement';
 import Logo from './Logo';
-import SelectCountry from '@/components/form/selectCountry';
-import PhoneInput from '@/components/form/phoneInput';
-import PasswordInput from '@/components/form/passwordInput';
+import {SelectCountry, PhoneInput, PasswordInput} from '@/components/form';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
   static navigationOptions = {
     headerShown: false,
