@@ -3,8 +3,14 @@ import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 
 import Statement from './Statement';
-import Logo from './Logo';
-import {SelectCountry, PhoneInput, PasswordInput} from '@/components/form';
+import {
+  SelectCountry,
+  PhoneInput,
+  PasswordInput,
+  Button,
+  ErrorMessage,
+} from '@/components/form';
+import {scaleSize} from '@/common/utils/ScreenUtil';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
   static navigationOptions = {
     headerShown: false,
@@ -14,57 +20,36 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
     return (
       <SafeAreaView style={{backgroundColor: '#5EA2EC', flex: 1}}>
         <Statement />
-        <Logo />
-        <View style={{flex: 1}}>
+        <View
+          style={{
+            flex: 1,
+            paddingHorizontal: scaleSize(40),
+            paddingBottom: scaleSize(60),
+          }}>
           <View
             style={{
               flex: 1,
-              marginLeft: 40,
-              marginRight: 40,
-              marginBottom: 60,
-              borderBottomStartRadius: 10,
-              borderBottomEndRadius: 10,
+              borderRadius: scaleSize(10),
               backgroundColor: '#fff',
+              paddingHorizontal: scaleSize(27),
             }}>
             <View
               style={{
-                height: 40,
+                height: scaleSize(80),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-              <Text style={{fontSize: 28, color: '#5EA2EC'}}>登录</Text>
+              <Text style={{fontSize: scaleSize(28), color: '#5EA2EC'}}>
+                登录
+              </Text>
             </View>
-            <View
-              style={{
-                marginTop: 20,
-                marginLeft: 27,
-                marginRight: 27,
-              }}>
+            <View>
               <SelectCountry />
               <PhoneInput areaCode="+86" />
-              <PasswordInput
-                style={{
-                  borderWidth: 1,
-                  borderColor: '#D8D8D8',
-                  borderRadius: 5,
-                  marginTop: 5,
-                }}
-              />
+              <PasswordInput />
+              <ErrorMessage />
             </View>
-            <TouchableOpacity
-              style={{
-                width: 279,
-                height: 56,
-                backgroundColor: '#5EA2EC',
-                borderRadius: 5,
-                opacity: 0.8,
-                alignSelf: 'center',
-                justifyContent: 'center',
-                alignItems: 'center',
-                marginTop: 60,
-              }}>
-              <Text style={{fontSize: 24, color: '#ffffff'}}>下一步</Text>
-            </TouchableOpacity>
+            <Button value="下一步" />
           </View>
         </View>
       </SafeAreaView>

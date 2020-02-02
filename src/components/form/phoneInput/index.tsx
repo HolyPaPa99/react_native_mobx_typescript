@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, TouchableOpacity} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import {
   InputStyle,
@@ -9,9 +9,23 @@ import {
 import Label from '@/components/form/label';
 
 export default class extends React.Component<
-  {style?: any; defaultValue?: string | undefined; areaCode?: string},
-  {value: string}
+  {
+    style?: any;
+    defaultValue?: string;
+    areaCode?: string;
+    [propName: string]: any;
+  },
+  {error: string}
 > {
+  constructor(props: {
+    style?: any;
+    defaultValue?: string;
+    areaCode?: string;
+    [propName: string]: any;
+  }) {
+    super(props);
+    this.state = {error: ''};
+  }
   render() {
     return (
       <View

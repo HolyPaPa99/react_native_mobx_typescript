@@ -1,10 +1,18 @@
 import React from 'react';
-import {View, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import Label from '@/components/form/label';
 import {ComponentStyle} from '@/components/form/FormStyle';
+import {scaleSize} from '@/common/utils/ScreenUtil';
 
-export default class extends React.Component<{style?: any}, {}> {
+export default class extends React.Component<
+  {style?: any; [propName: string]: any},
+  {error: string}
+> {
+  constructor(props: {style?: any; [propName: string]: any}) {
+    super(props);
+    this.state = {error: ''};
+  }
   render() {
     return (
       <View
