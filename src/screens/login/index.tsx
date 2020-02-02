@@ -4,11 +4,11 @@ import {NavigationStackScreenProps} from 'react-navigation-stack';
 
 import Statement from './Statement';
 import {
+  Form,
   SelectCountry,
   PhoneInput,
   PasswordInput,
   Button,
-  ErrorMessage,
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
@@ -43,12 +43,18 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
                 登录
               </Text>
             </View>
-            <View>
+            <Form>
               <SelectCountry />
               <PhoneInput areaCode="+86" />
-              <PasswordInput />
-              <ErrorMessage message=""/>
-            </View>
+              <PasswordInput
+                validator={value => {
+                  if (true) {
+                    throw new Error('请输入手机号码');
+                  }
+                  return true;
+                }}
+              />
+            </Form>
             <Button value="下一步" />
           </View>
         </View>
