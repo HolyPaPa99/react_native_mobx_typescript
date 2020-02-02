@@ -1,17 +1,22 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import Label from '@/components/form/label';
 import {ComponentStyle} from '@/components/form/FormStyle';
-import {scaleSize} from '@/common/utils/ScreenUtil';
+import FormItem, {
+  FormItemProps,
+  FormItemState,
+} from '@/components/form/FormItem';
 
-export default class extends React.Component<
-  {style?: any; [propName: string]: any},
-  {error: string}
-> {
-  constructor(props: {style?: any; [propName: string]: any}) {
+interface SelectCountryProps extends FormItemProps {
+  style?: any;
+  [propName: string]: any;
+}
+interface SelectCountryState extends FormItemState {}
+
+export default class extends FormItem<SelectCountryProps, SelectCountryState> {
+  constructor(props: SelectCountryProps) {
     super(props);
-    this.state = {error: ''};
   }
   render() {
     return (

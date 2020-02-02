@@ -7,24 +7,23 @@ import {
   ComponentStyle,
 } from '@/components/form/FormStyle';
 import Label from '@/components/form/label';
+import FormItem, {
+  FormItemProps,
+  FormItemState,
+} from '@/components/form/FormItem';
 
-export default class extends React.Component<
-  {
-    style?: any;
-    defaultValue?: string;
-    areaCode?: string;
-    [propName: string]: any;
-  },
-  {error: string}
-> {
-  constructor(props: {
-    style?: any;
-    defaultValue?: string;
-    areaCode?: string;
-    [propName: string]: any;
-  }) {
+interface PhoneInputProps extends FormItemProps {
+  style?: any;
+  defaultValue?: string;
+  areaCode?: string;
+  [propName: string]: any;
+}
+
+interface PhoneInputState extends FormItemState {}
+
+export default class extends FormItem<PhoneInputProps, PhoneInputState> {
+  constructor(props: PhoneInputProps) {
     super(props);
-    this.state = {error: ''};
   }
   render() {
     return (
