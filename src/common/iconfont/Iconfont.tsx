@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createIconSet} from 'react-native-vector-icons';
-import * as ScreenUtil from '@/common/utils/ScreenUtil';
+import {scaleSize} from '@/common/utils/ScreenUtil';
 
 //init iconSet
 const glyphMap = require('./iconfont.json');
@@ -10,8 +10,8 @@ const IconSet = createIconSet(glyphMap, 'iconfont', 'iconfont.ttf');
 //default style
 const styleSheet = StyleSheet.create({
   iconFontContainer: {
-    height: ScreenUtil.scaleSize(48),
-    paddingHorizontal: ScreenUtil.scaleSize(15),
+    height: scaleSize(48),
+    paddingHorizontal: scaleSize(15),
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -26,7 +26,7 @@ export const Icon = (props: {
   <View style={{...styleSheet.iconFontContainer, ...props.style}}>
     <IconSet
       name={props.name}
-      size={Number(props.size || ScreenUtil.scaleSize(18))}
+      size={Number(props.size || scaleSize(18))}
       color={props.color || '#D8D8D8'}
     />
   </View>
@@ -191,7 +191,7 @@ export const EyeOpen = (props: {
   <Icon
     name="eye-open"
     style={props.style}
-    size={props.size || ScreenUtil.scaleSize(16)}
+    size={props.size || scaleSize(16)}
     color={props.color}
   />
 );
@@ -204,7 +204,7 @@ export const EyeClose = (props: {
   <Icon
     name="eye-close"
     style={props.style}
-    size={props.size || ScreenUtil.scaleSize(16)}
+    size={props.size || scaleSize(16)}
     color={props.color}
   />
 );
@@ -277,7 +277,7 @@ export const PasswordFilled = (props: {
   <Icon
     name="password-filled"
     style={props.style}
-    size={props.size || ScreenUtil.scaleSize(20)}
+    size={props.size || scaleSize(20)}
     color={props.color}
   />
 );

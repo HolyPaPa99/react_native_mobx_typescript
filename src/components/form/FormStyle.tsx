@@ -19,7 +19,7 @@ export const ComponentStyle = StyleSheet.create({
     borderWidth: borderWidth,
     borderColor: borderColor,
     borderRadius: borderRadius,
-    marginTop: marginWidth,
+    marginBottom: marginWidth,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -71,6 +71,7 @@ export const ErrorMessageStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: containerPaddingHorizontal,
+    marginBottom: marginWidth,
   },
   text: {
     color: '#FF2D55',

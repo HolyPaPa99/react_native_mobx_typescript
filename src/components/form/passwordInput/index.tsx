@@ -1,21 +1,48 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
+import {FormItem, Validator} from '@/components/form/FormTypes';
 import {
   placeholderTextColor,
   ComponentStyle,
   InputStyle,
 } from '@/components/form/FormStyle';
-import * as ScreenUtil from '@/common/utils/ScreenUtil';
 
-export default class extends React.Component<
-  {style?: any; [propName: string]: any},
-  {error: string}
-> {
-  constructor(props: {style?: any; [propName: string]: any}) {
+interface FormItemPropsType {
+  name?: string;
+  validator?: Validator;
+  style?: any;
+  [propName: string]: any;
+}
+
+interface FormItemStateType {
+  value: string;
+  secureTextEntry: boolean;
+}
+
+export default class
+  extends React.Component<FormItemPropsType, FormItemStateType>
+  implements FormItem {
+  constructor(props: FormItemPropsType) {
     super(props);
-    this.state = {error: ''};
+    this.state = {value: '', secureTextEntry: true};
   }
+
+  getName() {
+    return this.props.name;
+  }
+
+  getValue() {
+    return this.state.value;
+  }
+
+  validate() {
+    if (this.props.validator) {
+      this.props.validator.call(this, this.state.value);
+    }
+    return true;
+  }
+
   render() {
     return (
       <View
@@ -34,11 +61,18 @@ export default class extends React.Component<
             placeholderTextColor={placeholderTextColor}
             clearButtonMode="always"
             style={InputStyle.textInput}
-            secureTextEntry={true}
+            secureTextEntry={this.state.secureTextEntry}
           />
         </View>
-        <TouchableOpacity>
-          <Iconfont.EyeOpen />
+        <TouchableOpacity
+          onPress={() => {
+            this.setState({secureTextEntry: !this.state.secureTextEntry});
+          }}>
+          {this.state.secureTextEntry ? (
+            <Iconfont.EyeClose />
+          ) : (
+            <Iconfont.EyeOpen />
+          )}
         </TouchableOpacity>
       </View>
     );

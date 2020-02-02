@@ -47,7 +47,7 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
               <SelectCountry />
               <PhoneInput areaCode="+86" />
               <PasswordInput />
-              <ErrorMessage />
+              <ErrorMessage message=""/>
             </View>
             <Button value="下一步" />
           </View>
