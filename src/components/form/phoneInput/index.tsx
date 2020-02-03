@@ -24,6 +24,7 @@ interface PhoneInputState extends FormItemState {}
 export default class extends FormItem<PhoneInputProps, PhoneInputState> {
   constructor(props: PhoneInputProps) {
     super(props);
+    this.state = {value: ''}
   }
   render() {
     return (

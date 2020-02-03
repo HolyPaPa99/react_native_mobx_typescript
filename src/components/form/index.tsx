@@ -28,8 +28,8 @@ export class Form extends React.Component<any, {errMsg: string}> {
   getFormValues(): {[key: string]: any} {
     let formValues: Array<{name: string; value: any}> = [];
     this.childrenRef.map((item, i) => {
-      if(item instanceof FormItem){
-        formValues.push({name: item.getName(), value: item.getValue()})
+      if (item instanceof FormItem) {
+        formValues.push({name: item.getName(), value: item.getValue()});
       }
     });
     return formValues;
@@ -38,18 +38,21 @@ export class Form extends React.Component<any, {errMsg: string}> {
    * 验证form表单
    */
   validateForm() {
-    this.childrenRef.map((item, i) => {
-      try {
+    try {
+      this.childrenRef.forEach((item, i) => {
         if (item instanceof FormItem) {
           item.validate();
         }
-      } catch (e) {
-        this.setState({errMsg: e});
-      }
-    });
+      });
+    } catch (e) {
+      this.setState({errMsg: e});
+      return;
+    }
+    this.setState({errMsg: ''});
   }
 
   render() {
+    this.childrenRef = []
     return (
       <View>
         {React.Children.map(this.props.children, (child, i) => {

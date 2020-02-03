@@ -44,6 +44,9 @@ export default class extends FormItem<PasswordProps, PasswordState> {
             placeholderTextColor={placeholderTextColor}
             clearButtonMode="always"
             style={InputStyle.textInput}
+            onChangeText={value => {
+              console.log(value)
+              this.setState({value: value})}}
             secureTextEntry={this.state.secureTextEntry}
           />
         </View>

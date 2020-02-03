@@ -11,7 +11,9 @@ import {
   Button,
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
+import {isEmpty} from '@wessberg/stringutil';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
+  formRef: any;
   static navigationOptions = {
     headerShown: false,
   };
@@ -43,19 +45,29 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
                 登录
               </Text>
             </View>
-            <Form>
-              <SelectCountry />
-              <PhoneInput areaCode="+86" />
+            <Form ref={ref => (this.formRef = ref)}>
+              <SelectCountry name="areaCode" />
+              <PhoneInput areaCode="+86" name="phone" />
               <PasswordInput
+                name="password"
                 validator={value => {
-                  if (true) {
-                    throw new Error('请输入手机号码');
+                  console.log(value)
+                  if (isEmpty(value)) {
+                    throw '请输入手机号码';
                   }
                   return true;
                 }}
               />
             </Form>
-            <Button value="下一步" />
+            <Button
+              value="下一步"
+              onPress={() => {
+                if (this.formRef instanceof Form) {
+                  this.formRef.validateForm();
+                  console.log(this.formRef.getFormValues());
+                }
+              }}
+            />
           </View>
         </View>
       </SafeAreaView>
