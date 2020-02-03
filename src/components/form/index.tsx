@@ -6,7 +6,7 @@ import passwordInput from './passwordInput';
 import selectCountry from './selectCountry';
 import button from './button';
 import message from './message';
-import FormItem, {FormItemProps, FormItemState} from './FormItem';
+import FormItem from './FormItem';
 
 export class Form extends React.Component<any, {errMsg: string}> {
   childrenRef: Array<any> = [];

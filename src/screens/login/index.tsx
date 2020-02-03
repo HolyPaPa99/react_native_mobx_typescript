@@ -12,6 +12,7 @@ import {
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {isEmpty} from '@wessberg/stringutil';
+import {PhoneValidator} from '@/components/form/FormValidator';
 class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
   formRef: any;
   static navigationOptions = {
@@ -48,16 +49,7 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
             <Form ref={ref => (this.formRef = ref)}>
               <SelectCountry name="areaCode" />
               <PhoneInput areaCode="+86" name="phone" />
-              <PasswordInput
-                name="password"
-                validator={value => {
-                  console.log(value)
-                  if (isEmpty(value)) {
-                    throw '请输入手机号码';
-                  }
-                  return true;
-                }}
-              />
+              <PasswordInput name="password" validator={PhoneValidator} />
             </Form>
             <Button
               value="下一步"
