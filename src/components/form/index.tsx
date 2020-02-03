@@ -44,7 +44,7 @@ export class Form extends React.Component<any, {errMsg: string}> {
   }
 
   render() {
-    this.childrenRef = []
+    this.childrenRef = [];
     return (
       <View>
         {React.Children.map(this.props.children, (child, i) => {

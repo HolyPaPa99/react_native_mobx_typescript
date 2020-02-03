@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, TouchableOpacity} from 'react-native';
+import {View, TextInput} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import {
   InputStyle,
@@ -11,6 +11,7 @@ import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import {injectIntl} from 'react-intl';
 
 interface PhoneInputProps extends FormItemProps {
   style?: any;
@@ -21,12 +22,13 @@ interface PhoneInputProps extends FormItemProps {
 
 interface PhoneInputState extends FormItemState {}
 
-export default class extends FormItem<PhoneInputProps, PhoneInputState> {
+class PhoneInput extends FormItem<PhoneInputProps, PhoneInputState> {
   constructor(props: PhoneInputProps) {
     super(props);
-    this.state = {value: ''}
+    this.state = {value: ''};
   }
   render() {
+    const {formatMessage} = this.props.intl;
     return (
       <View
         style={{
@@ -41,7 +43,7 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
         <Label name={this.props.areaCode} style={{paddingHorizontal: 0}} />
         <View style={InputStyle.container}>
           <TextInput
-            placeholder="请输入手机号码"
+            placeholder={formatMessage({id: 'intl.input.phone.placeholder'})}
             placeholderTextColor={placeholderTextColor}
             style={InputStyle.textInput}
             defaultValue={this.props.defaultValue}
@@ -52,3 +54,4 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
     );
   }
 }
+export default injectIntl(PhoneInput);
