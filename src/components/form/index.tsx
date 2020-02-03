@@ -8,14 +8,6 @@ import button from './button';
 import message from './message';
 import FormItem, {FormItemProps, FormItemState} from './FormItem';
 
-const withForm = (WrappedComponent: React.ComponentType) => {
-  return class extends React.Component<{[propName: string]: any}> {
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
-};
-
 export class Form extends React.Component<any, {errMsg: string}> {
   childrenRef: Array<any> = [];
   constructor(props: any) {
