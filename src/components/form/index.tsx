@@ -7,9 +7,8 @@ import selectCountry from './selectCountry';
 import button from './button';
 import message from './message';
 import FormItem from './FormItem';
-
 export class Form extends React.Component<any, {errMsg: string}> {
-  childrenRef: Array<any> = [];
+  private childrenRef: Array<any> = [];
   constructor(props: any) {
     super(props);
     this.state = {errMsg: ''};
@@ -19,6 +18,7 @@ export class Form extends React.Component<any, {errMsg: string}> {
    */
   getFormValues(): {[key: string]: any} {
     let formValues: Array<{name: string; value: any}> = [];
+    console.log(this.childrenRef)
     this.childrenRef.map((item, i) => {
       if (item instanceof FormItem) {
         formValues.push({name: item.getName(), value: item.getValue()});
@@ -30,6 +30,7 @@ export class Form extends React.Component<any, {errMsg: string}> {
    * 验证form表单
    */
   validateForm() {
+    console.log(this.childrenRef)
     try {
       this.childrenRef.forEach((item, i) => {
         if (item instanceof FormItem) {
@@ -42,14 +43,14 @@ export class Form extends React.Component<any, {errMsg: string}> {
     }
     this.setState({errMsg: ''});
   }
-
   render() {
-    this.childrenRef = [];
     return (
       <View>
         {React.Children.map(this.props.children, (child, i) => {
           return React.cloneElement(child as React.ReactElement, {
-            ref: (ref: any) => this.childrenRef.push(ref),
+            ref: (ref: any) => {
+              this.childrenRef[i] = ref;
+            },
           });
         })}
         <ErrorMessage message={this.state.errMsg} />

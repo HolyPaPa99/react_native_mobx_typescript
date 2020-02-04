@@ -10,6 +10,7 @@ export default class extends React.Component<
   any
 > {
   render() {
+    console.log('render Message')
     return (
       <View style={ErrorMessageStyle.container}>
         <Text style={ErrorMessageStyle.text}>{this.props.message}</Text>

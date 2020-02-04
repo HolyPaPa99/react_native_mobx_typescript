@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
+import {injectIntl} from 'react-intl';
 
 import Statement from './Statement';
 import {
@@ -11,15 +12,18 @@ import {
   Button,
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
-import {isEmpty} from '@wessberg/stringutil';
 import {PhoneValidator} from '@/components/form/FormValidator';
-class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
+class LoginScreen extends React.Component<
+  {[propName: string]: any} & NavigationStackScreenProps,
+  {}
+> {
   formRef: any;
   static navigationOptions = {
     headerShown: false,
   };
 
   render() {
+    const {formatMessage} = this.props.intl;
     return (
       <SafeAreaView style={{backgroundColor: '#5EA2EC', flex: 1}}>
         <Statement />
@@ -38,7 +42,8 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
             }}>
             <View
               style={{
-                height: scaleSize(80),
+                paddingTop:scaleSize(40),
+                paddingBottom:scaleSize(20),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
@@ -46,10 +51,22 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
                 登录
               </Text>
             </View>
-            <Form ref={ref => (this.formRef = ref)}>
+            <Form ref={(ref: any) => (this.formRef = ref)}>
               <SelectCountry name="areaCode" />
-              <PhoneInput areaCode="+86" name="phone" />
-              <PasswordInput name="password" validator={PhoneValidator} />
+              <PhoneInput
+                areaCode="+86"
+                name="phone"
+                placeholder={formatMessage({
+                  id: 'intl.input.phone.placeholder',
+                })}
+                validator={PhoneValidator}
+              />
+              <PasswordInput
+                name="password"
+                placeholder={formatMessage({
+                  id: 'intl.input.password.placeholder',
+                })}
+              />
             </Form>
             <Button
               value="下一步"
@@ -66,4 +83,4 @@ class LoginScreen extends React.Component<NavigationStackScreenProps, {}> {
     );
   }
 }
-export default LoginScreen;
+export default injectIntl(LoginScreen);

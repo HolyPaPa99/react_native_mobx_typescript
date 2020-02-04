@@ -17,9 +17,10 @@ interface SelectCountryState extends FormItemState {}
 export default class extends FormItem<SelectCountryProps, SelectCountryState> {
   constructor(props: SelectCountryProps) {
     super(props);
-    this.state = {value: ''}
+    this.state = {value: ''};
   }
   render() {
+    console.log('render SelectCountry');
     return (
       <View
         style={{

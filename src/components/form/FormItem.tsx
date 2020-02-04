@@ -26,6 +26,8 @@ abstract class FormItem<
   }
 
   validate() {
+    console.log("formItem validate")
+    console.log(this.state.value)
     if (this.props.validator) {
       this.props.validator.call(this, this.state.value);
     }

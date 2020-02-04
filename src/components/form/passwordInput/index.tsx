@@ -13,6 +13,7 @@ import FormItem, {
 
 interface PasswordProps extends FormItemProps {
   style?: any;
+  placeholder?: string;
   [propName: string]: any;
 }
 
@@ -27,6 +28,7 @@ export default class extends FormItem<PasswordProps, PasswordState> {
   }
 
   render() {
+    console.log('render PasswordInput');
     return (
       <View
         style={{
@@ -40,13 +42,13 @@ export default class extends FormItem<PasswordProps, PasswordState> {
         <Iconfont.PasswordFilled />
         <View style={InputStyle.container}>
           <TextInput
-            placeholder="请输入密码"
+            placeholder={this.props.placeholder}
             placeholderTextColor={placeholderTextColor}
             clearButtonMode="always"
             style={InputStyle.textInput}
             onChangeText={value => {
-              console.log(value)
-              this.setState({value: value})}}
+              this.setState({value: value});
+            }}
             secureTextEntry={this.state.secureTextEntry}
           />
         </View>

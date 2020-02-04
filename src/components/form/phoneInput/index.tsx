@@ -11,24 +11,24 @@ import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
-import {injectIntl} from 'react-intl';
 
 interface PhoneInputProps extends FormItemProps {
   style?: any;
   defaultValue?: string;
   areaCode?: string;
+  placeholder?: string;
   [propName: string]: any;
 }
 
 interface PhoneInputState extends FormItemState {}
 
-class PhoneInput extends FormItem<PhoneInputProps, PhoneInputState> {
+export default class extends FormItem<PhoneInputProps, PhoneInputState> {
   constructor(props: PhoneInputProps) {
     super(props);
     this.state = {value: ''};
   }
   render() {
-    const {formatMessage} = this.props.intl;
+    console.log('render PhoneInput');
     return (
       <View
         style={{
@@ -43,7 +43,7 @@ class PhoneInput extends FormItem<PhoneInputProps, PhoneInputState> {
         <Label name={this.props.areaCode} style={{paddingHorizontal: 0}} />
         <View style={InputStyle.container}>
           <TextInput
-            placeholder={formatMessage({id: 'intl.input.phone.placeholder'})}
+            placeholder={this.props.placeholder}
             placeholderTextColor={placeholderTextColor}
             style={InputStyle.textInput}
             defaultValue={this.props.defaultValue}
@@ -54,4 +54,3 @@ class PhoneInput extends FormItem<PhoneInputProps, PhoneInputState> {
     );
   }
 }
-export default injectIntl(PhoneInput);
