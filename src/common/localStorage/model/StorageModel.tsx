@@ -1,7 +1,7 @@
 class StorageModel {
   token: string = '';
 
-  lang: string = 'en';
+  language: string = 'zh';
 }
 
 export default StorageModel;
