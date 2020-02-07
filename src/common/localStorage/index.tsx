@@ -1,6 +1,7 @@
 import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import StorageModel from '@/common/localStorage/model/StorageModel';
+import {inject} from 'mobx-react';
 
 const key: string = '@storage';
 
@@ -19,16 +20,23 @@ export function mergeStorage(storage: StorageModel): void {
 }
 
 export function withLocalStorage(WrappedComponent: React.ComponentType) {
-  getStorage().then(storage => {
-    console.log('current localStorage:' + JSON.stringify(storage));
-    if (!storage) {
-      setStorage(new StorageModel());
-    }
-  });
-  return class extends React.Component {
-    render() {
-      console.log('render withLocalStorage');
-      return <WrappedComponent />;
-    }
-  };
+  return inject('userStore')(
+    class extends React.Component {
+      constructor(props: any) {
+        super(props);
+        getStorage().then((storage: StorageModel) => {
+          console.log('current localStorage:' + JSON.stringify(storage));
+          if (!storage) {
+            setStorage(new StorageModel());
+          } else {
+            props.userStore.setLanguage(storage.language);
+          }
+        });
+      }
+      render() {
+        console.log('render withLocalStorage');
+        return <WrappedComponent />;
+      }
+    },
+  );
 }
