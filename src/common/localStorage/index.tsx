@@ -19,9 +19,15 @@ export function mergeStorage(storage: StorageModel): void {
 }
 
 export function withLocalStorage(WrappedComponent: React.ComponentType) {
-  setStorage(new StorageModel());
+  getStorage().then(storage => {
+    console.log('current localStorage:' + JSON.stringify(storage));
+    if (!storage) {
+      setStorage(new StorageModel());
+    }
+  });
   return class extends React.Component {
     render() {
+      console.log('render withLocalStorage');
       return <WrappedComponent />;
     }
   };

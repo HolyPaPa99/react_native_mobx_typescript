@@ -1,28 +1,25 @@
 import React from 'react';
 import {IntlProvider} from 'react-intl';
 import message from './lang/index';
-import {getStorage} from '@/common/localStorage';
-import StorageModel from '@/common/localStorage/model/StorageModel';
+import {inject} from 'mobx-react';
 
 export function withIntl(WrappedComponent: React.ComponentType) {
-  return class extends React.Component<{}, {language: string}> {
-    constructor(props: any) {
-      super(props);
-      this.state = {language: 'en'};
-      getStorage().then((storage: StorageModel) => {
-        console.log('current language:' + storage.language);
-        this.setState({language: storage.language});
-      });
-    }
-
-    render() {
-      return (
-        <IntlProvider
-          locale={this.state.language}
-          messages={message[this.state.language]}>
-          <WrappedComponent {...this.props} />
-        </IntlProvider>
-      );
-    }
-  };
+  return inject('userStore')(
+    class extends React.Component<any> {
+      constructor(props: any) {
+        super(props);
+        this.state = {language: props.userStore.language};
+      }
+      render() {
+        console.log('render withIntl');
+        return (
+          <IntlProvider
+            locale={this.props.userStore.language}
+            messages={message[this.props.userStore.language]}>
+            <WrappedComponent />
+          </IntlProvider>
+        );
+      }
+    },
+  );
 }

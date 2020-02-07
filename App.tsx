@@ -16,12 +16,12 @@ import {withLocalStorage} from '@/common/localStorage';
 
 const AppContainer = createAppContainer(navigator);
 
+@withMobx
 @withLocalStorage
 @withIntl
-@withMobx
 class App extends React.Component<{}> {
   render() {
-    return <AppContainer />;
+    return <AppContainer />; 
   }
 }
 

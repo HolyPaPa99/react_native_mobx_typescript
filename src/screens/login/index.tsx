@@ -13,6 +13,9 @@ import {
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {PhoneValidator} from '@/components/form/FormValidator';
+import {observer,inject} from 'mobx-react';
+
+@inject("userStore")
 class LoginScreen extends React.Component<
   {[propName: string]: any} & NavigationStackScreenProps,
   {}
@@ -23,6 +26,8 @@ class LoginScreen extends React.Component<
   };
 
   render() {
+    console.log('render login screen');
+    console.log(this.props.userStore.language);
     const {formatMessage} = this.props.intl;
     return (
       <SafeAreaView style={{backgroundColor: '#5EA2EC', flex: 1}}>
@@ -42,8 +47,8 @@ class LoginScreen extends React.Component<
             }}>
             <View
               style={{
-                paddingTop:scaleSize(40),
-                paddingBottom:scaleSize(20),
+                paddingTop: scaleSize(40),
+                paddingBottom: scaleSize(20),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
