@@ -7,6 +7,7 @@ import selectCountry from './selectCountry';
 import button from './button';
 import message from './message';
 import FormItem from './FormItem';
+import Log from '@/common/log';
 export class Form extends React.Component<any, {errMsg: string}> {
   private childrenRef: Array<any> = [];
   constructor(props: any) {
@@ -18,7 +19,6 @@ export class Form extends React.Component<any, {errMsg: string}> {
    */
   getFormValues(): {[key: string]: any} {
     let formValues: Array<{name: string; value: any}> = [];
-    console.log(this.childrenRef)
     this.childrenRef.map((item, i) => {
       if (item instanceof FormItem) {
         formValues.push({name: item.getName(), value: item.getValue()});
@@ -30,7 +30,6 @@ export class Form extends React.Component<any, {errMsg: string}> {
    * 验证form表单
    */
   validateForm() {
-    console.log(this.childrenRef)
     try {
       this.childrenRef.forEach((item, i) => {
         if (item instanceof FormItem) {
@@ -38,12 +37,14 @@ export class Form extends React.Component<any, {errMsg: string}> {
         }
       });
     } catch (e) {
+      Log.error(e);
       this.setState({errMsg: e});
       return;
     }
     this.setState({errMsg: ''});
   }
   render() {
+    Log.info('render Form');
     return (
       <View>
         {React.Children.map(this.props.children, (child, i) => {

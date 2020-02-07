@@ -11,6 +11,7 @@ import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import Log from '@/common/log';
 
 interface PhoneInputProps extends FormItemProps {
   style?: any;
@@ -28,7 +29,7 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
     this.state = {value: ''};
   }
   render() {
-    console.log('render PhoneInput');
+    Log.info('render PhoneInput');
     return (
       <View
         style={{
@@ -40,7 +41,7 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
           ...this.props.style,
         }}>
         <Iconfont.Phone />
-        <Label name={this.props.areaCode} style={{paddingHorizontal: 0}} />
+        <Label text={this.props.areaCode} style={{paddingHorizontal: 0}} />
         <View style={InputStyle.container}>
           <TextInput
             placeholder={this.props.placeholder}
@@ -48,6 +49,9 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
             style={InputStyle.textInput}
             defaultValue={this.props.defaultValue}
             clearButtonMode="always"
+            onChangeText={(text: any) => {
+              this.setState({value: text});
+            }}
           />
         </View>
       </View>

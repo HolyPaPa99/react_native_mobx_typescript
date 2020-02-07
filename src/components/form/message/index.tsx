@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {ErrorMessageStyle} from '@/components/form/FormStyle';
+import Log from '@/common/log';
 
 export default class extends React.Component<
   {
@@ -10,7 +11,7 @@ export default class extends React.Component<
   any
 > {
   render() {
-    console.log('render Message')
+    Log.info('render Message');
     return (
       <View style={ErrorMessageStyle.container}>
         <Text style={ErrorMessageStyle.text}>{this.props.message}</Text>

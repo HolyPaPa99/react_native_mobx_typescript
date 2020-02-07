@@ -7,6 +7,7 @@ import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import Log from '@/common/log';
 
 interface SelectCountryProps extends FormItemProps {
   style?: any;
@@ -20,7 +21,7 @@ export default class extends FormItem<SelectCountryProps, SelectCountryState> {
     this.state = {value: ''};
   }
   render() {
-    console.log('render SelectCountry');
+    Log.info('render SelectCountry');
     return (
       <View
         style={{
@@ -31,9 +32,9 @@ export default class extends FormItem<SelectCountryProps, SelectCountryState> {
           ...ComponentStyle.container,
           ...this.props.style,
         }}>
-        <Label name="国家/地区" />
+        <Label text="国家/地区" />
         <TouchableOpacity style={{flex: 2, flexDirection: 'row'}}>
-          <Label name="中国" style={{flex: 1}} />
+          <Label text="中国" style={{flex: 1}} />
           <Iconfont.RightIndicator />
         </TouchableOpacity>
       </View>

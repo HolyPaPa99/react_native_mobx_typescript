@@ -2,6 +2,7 @@ import React from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
 import StorageModel from '@/common/localStorage/model/StorageModel';
 import {inject} from 'mobx-react';
+import Log from '@/common/log';
 
 const key: string = '@storage';
 
@@ -25,7 +26,7 @@ export function withLocalStorage(WrappedComponent: React.ComponentType) {
       constructor(props: any) {
         super(props);
         getStorage().then((storage: StorageModel) => {
-          console.log('current localStorage:' + JSON.stringify(storage));
+          Log.info('current localStorage:' + JSON.stringify(storage));
           if (!storage) {
             setStorage(new StorageModel());
           } else {
@@ -34,7 +35,7 @@ export function withLocalStorage(WrappedComponent: React.ComponentType) {
         });
       }
       render() {
-        console.log('render withLocalStorage');
+        Log.info('render withLocalStorage');
         return <WrappedComponent />;
       }
     },

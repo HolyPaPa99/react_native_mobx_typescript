@@ -2,6 +2,7 @@ import React from 'react';
 import {IntlProvider} from 'react-intl';
 import message from './lang/index';
 import {inject, observer} from 'mobx-react';
+import Log from '@/common/log';
 
 export function withIntl(WrappedComponent: React.ComponentType) {
   return inject('userStore')(
@@ -12,7 +13,7 @@ export function withIntl(WrappedComponent: React.ComponentType) {
           this.state = {language: props.userStore.language};
         }
         render() {
-          console.log('render withIntl');
+          Log.info('render withIntl');
           return (
             <IntlProvider
               locale={this.props.userStore.language}

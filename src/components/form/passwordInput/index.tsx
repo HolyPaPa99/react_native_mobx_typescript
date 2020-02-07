@@ -10,6 +10,7 @@ import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import Log from '@/common/log';
 
 interface PasswordProps extends FormItemProps {
   style?: any;
@@ -28,7 +29,7 @@ export default class extends FormItem<PasswordProps, PasswordState> {
   }
 
   render() {
-    console.log('render PasswordInput');
+    Log.info('render PasswordInput');
     return (
       <View
         style={{

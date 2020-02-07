@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
 
@@ -13,7 +13,7 @@ import {
 } from '@/components/form';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {PhoneValidator} from '@/components/form/FormValidator';
-
+import Log from '@/common/log';
 class LoginScreen extends React.Component<
   {[propName: string]: any} & NavigationStackScreenProps,
   {}
@@ -24,7 +24,7 @@ class LoginScreen extends React.Component<
   };
 
   render() {
-    console.log('render login screen');
+    Log.info('render login screen');
     const {formatMessage} = this.props.intl;
     return (
       <SafeAreaView style={{backgroundColor: '#5EA2EC', flex: 1}}>
@@ -75,7 +75,7 @@ class LoginScreen extends React.Component<
               onPress={() => {
                 if (this.formRef instanceof Form) {
                   this.formRef.validateForm();
-                  console.log(this.formRef.getFormValues());
+                  Log.info(this.formRef.getFormValues());
                 }
               }}
             />
