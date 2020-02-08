@@ -11,6 +11,7 @@ export default class Log {
       '%c【ERROR:' + message + '】',
       'color:#FF2D55;font-weight:bold;',
     );
+    console.trace();
   }
 
   /**
