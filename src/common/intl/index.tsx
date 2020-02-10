@@ -8,10 +8,6 @@ export function withIntl(WrappedComponent: React.ComponentType) {
   return inject('userStore')(
     observer(
       class extends React.Component<any> {
-        constructor(props: any) {
-          super(props);
-          this.state = {language: props.userStore.language};
-        }
         render() {
           Log.info('render withIntl');
           return (

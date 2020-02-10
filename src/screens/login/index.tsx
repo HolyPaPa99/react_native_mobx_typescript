@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
+import {inject} from 'mobx-react';
 
 import Statement from './Statement';
 import {
@@ -14,6 +15,7 @@ import {
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {PhoneValidator} from '@/components/form/FormValidator';
 import Log from '@/common/log';
+@inject('userStore')
 class LoginScreen extends React.Component<
   {[propName: string]: any} & NavigationStackScreenProps,
   {}
@@ -44,13 +46,14 @@ class LoginScreen extends React.Component<
             }}>
             <View
               style={{
+                height: scaleSize(105),
                 paddingTop: scaleSize(40),
                 paddingBottom: scaleSize(20),
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
               <Text style={{fontSize: scaleSize(28), color: '#5EA2EC'}}>
-                登录
+                {formatMessage({id: 'intl.screen.login.title'})}
               </Text>
             </View>
             <Form ref={(ref: any) => (this.formRef = ref)}>
@@ -79,6 +82,25 @@ class LoginScreen extends React.Component<
                 }
               }}
             />
+            <TouchableOpacity
+              onPress={() => {
+                if (this.props.userStore.language === 'en') {
+                  this.props.userStore.setLanguage('zh');
+                } else {
+                  this.props.userStore.setLanguage('en');
+                }
+              }}>
+              <View
+                style={{
+                  height: scaleSize(48),
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <Text style={{fontSize: scaleSize(16), color: '#5EA2EC'}}>
+                  {formatMessage({id: 'intl.user.language'})}
+                </Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </SafeAreaView>
