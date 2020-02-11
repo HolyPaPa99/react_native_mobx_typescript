@@ -7,7 +7,7 @@ class Separator extends React.Component {
     return (
       <View
         style={{
-          width: scaleSize(1),
+          width: 0.5,
           height: scaleSize(18),
           backgroundColor: '#5EA2EC',
           marginHorizontal: scaleSize(10),
