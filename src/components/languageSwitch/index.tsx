@@ -4,20 +4,28 @@ import {injectIntl} from 'react-intl';
 
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {inject} from 'mobx-react';
+import {mergeStorage} from '@/common/localStorage';
 
 @inject('userStore')
 class LanguageSwitch extends React.Component<any> {
   render() {
     const {formatMessage} = this.props.intl;
     return (
-      <View style={{paddingVertical:scaleSize(5)}}>
+      <View
+        style={{
+          paddingVertical: scaleSize(5),
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
         <TouchableOpacity
           style={{
             alignItems: 'center',
             justifyContent: 'center',
+            width: scaleSize(100),
           }}
           onPress={() => {
             this.props.userStore.setLanguage('en');
+            mergeStorage({language: 'en'});
           }}>
           <Text
             style={{
@@ -33,9 +41,11 @@ class LanguageSwitch extends React.Component<any> {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
+            width: scaleSize(100),
           }}
           onPress={() => {
             this.props.userStore.setLanguage('zh');
+            mergeStorage({language: 'zh'});
           }}>
           <Text
             style={{
