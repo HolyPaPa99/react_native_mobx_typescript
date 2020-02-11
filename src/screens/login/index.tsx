@@ -15,6 +15,9 @@ import {
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {PhoneValidator} from '@/components/form/FormValidator';
 import Log from '@/common/log';
+import LanguageSwitch from '@/components/languageSwitch';
+import TextNavigator from '@/components/navigator/TextNavigator';
+
 @inject('userStore')
 class LoginScreen extends React.Component<
   {[propName: string]: any} & NavigationStackScreenProps,
@@ -35,7 +38,7 @@ class LoginScreen extends React.Component<
           style={{
             flex: 1,
             paddingHorizontal: scaleSize(40),
-            paddingBottom: scaleSize(60),
+            paddingBottom: scaleSize(40),
           }}>
           <View
             style={{
@@ -44,63 +47,65 @@ class LoginScreen extends React.Component<
               backgroundColor: '#fff',
               paddingHorizontal: scaleSize(27),
             }}>
-            <View
-              style={{
-                height: scaleSize(105),
-                paddingTop: scaleSize(40),
-                paddingBottom: scaleSize(20),
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-              <Text style={{fontSize: scaleSize(28), color: '#5EA2EC'}}>
-                {formatMessage({id: 'intl.screen.login.title'})}
-              </Text>
-            </View>
-            <Form ref={(ref: any) => (this.formRef = ref)}>
-              <SelectCountry name="areaCode" />
-              <PhoneInput
-                areaCode="+86"
-                name="phone"
-                placeholder={formatMessage({
-                  id: 'intl.input.phone.placeholder',
-                })}
-                validator={PhoneValidator}
-              />
-              <PasswordInput
-                name="password"
-                placeholder={formatMessage({
-                  id: 'intl.input.password.placeholder',
-                })}
-              />
-            </Form>
-            <Button
-              value="下一步"
-              onPress={() => {
-                if (this.formRef instanceof Form) {
-                  this.formRef.validateForm();
-                  Log.info(this.formRef.getFormValues());
-                }
-              }}
-            />
-            <TouchableOpacity
-              onPress={() => {
-                if (this.props.userStore.language === 'en') {
-                  this.props.userStore.setLanguage('zh');
-                } else {
-                  this.props.userStore.setLanguage('en');
-                }
-              }}>
+            <View style={{flex: 1}}>
               <View
                 style={{
-                  height: scaleSize(48),
+                  height: scaleSize(105),
+                  paddingTop: scaleSize(40),
+                  paddingBottom: scaleSize(20),
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}>
-                <Text style={{fontSize: scaleSize(16), color: '#5EA2EC'}}>
-                  {formatMessage({id: 'intl.user.language'})}
+                <Text style={{fontSize: scaleSize(28), color: '#5EA2EC'}}>
+                  {formatMessage({id: 'intl.screen.login.title'})}
                 </Text>
               </View>
-            </TouchableOpacity>
+              <Form ref={(ref: any) => (this.formRef = ref)}>
+                <SelectCountry name="areaCode" />
+                <PhoneInput
+                  areaCode="+86"
+                  name="phone"
+                  placeholder={formatMessage({
+                    id: 'intl.input.phone.placeholder',
+                  })}
+                  validator={PhoneValidator}
+                />
+                <PasswordInput
+                  name="password"
+                  placeholder={formatMessage({
+                    id: 'intl.input.password.placeholder',
+                  })}
+                />
+              </Form>
+              <Button
+                value={formatMessage({id: 'intl.button.next'})}
+                onPress={() => {
+                  if (this.formRef instanceof Form) {
+                    this.formRef.validateForm();
+                    Log.info(this.formRef.getFormValues());
+                  }
+                }}
+              />
+              <LanguageSwitch />
+            </View>
+            <TextNavigator
+              navigators={[
+                {
+                  text: formatMessage({id: 'intl.screen.login.forgetPassword'}),
+                  onPress: () => {
+                    console.log('忘记密码');
+                  },
+                },
+                {
+                  text: formatMessage({
+                    id: 'intl.screen.login.registerAccount',
+                  }),
+                  onPress: () => {
+                    console.log('注册账号');
+                  },
+                },
+              ]}
+            />
           </View>
         </View>
       </SafeAreaView>
