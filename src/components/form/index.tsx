@@ -3,7 +3,7 @@ import {View} from 'react-native';
 import label from './label';
 import phoneInput from './phoneInput';
 import passwordInput from './passwordInput';
-import selectCountry from './selectCountry';
+import picker from './picker';
 import button from './button';
 import message from './message';
 import FormItem from './FormItem';
@@ -61,7 +61,7 @@ export class Form extends React.Component<any, {errMsg: string}> {
 }
 
 export const Label = label;
-export const SelectCountry = selectCountry;
+export const Picker = picker;
 export const PhoneInput = phoneInput;
 export const PasswordInput = passwordInput;
 export const Button = button;

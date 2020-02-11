@@ -7,7 +7,7 @@ import {inject} from 'mobx-react';
 import Statement from './Statement';
 import {
   Form,
-  SelectCountry,
+  Picker,
   PhoneInput,
   PasswordInput,
   Button,
@@ -61,7 +61,11 @@ class LoginScreen extends React.Component<
                 </Text>
               </View>
               <Form ref={(ref: any) => (this.formRef = ref)}>
-                <SelectCountry name="areaCode" />
+                <Picker
+                  name="areaCode"
+                  label={formatMessage({id: 'intl.screen.login.country'})}
+                  text="中国"
+                />
                 <PhoneInput
                   areaCode="+86"
                   name="phone"

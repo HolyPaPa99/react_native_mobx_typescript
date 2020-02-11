@@ -9,16 +9,19 @@ import FormItem, {
 } from '@/components/form/FormItem';
 import Log from '@/common/log';
 
-interface SelectCountryProps extends FormItemProps {
+interface PickerProps extends FormItemProps {
   style?: any;
+  label: string;
+  text: string;
+  value?: string;
   [propName: string]: any;
 }
-interface SelectCountryState extends FormItemState {}
+interface PickerState extends FormItemState {}
 
-export default class extends FormItem<SelectCountryProps, SelectCountryState> {
-  constructor(props: SelectCountryProps) {
+export default class extends FormItem<PickerProps, PickerState> {
+  constructor(props: PickerProps) {
     super(props);
-    this.state = {value: ''};
+    this.state = {value: this.props.value || ''};
   }
   render() {
     Log.info('render SelectCountry');
@@ -32,9 +35,9 @@ export default class extends FormItem<SelectCountryProps, SelectCountryState> {
           ...ComponentStyle.container,
           ...this.props.style,
         }}>
-        <Label text="国家/地区" />
+        <Label text={this.props.label} />
         <TouchableOpacity style={{flex: 2, flexDirection: 'row'}}>
-          <Label text="中国" style={{flex: 1}} />
+          <Label text={this.props.text} style={{flex: 1}} />
           <Iconfont.RightIndicator />
         </TouchableOpacity>
       </View>
