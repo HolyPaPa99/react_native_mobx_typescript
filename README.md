@@ -100,7 +100,7 @@
 
 ## （2）页面监听数据模型数据更新
 
-通过 mobx 的 inject 高阶组件将数据模型注入 react 组件的 props 中，当模型的数据发生变化的时候自动刷新 react 组件显示。
+通过 mobx 的 inject 高阶组件将数据模型注入 react 组件的 props 中，当模型的数据发生变化的时候自动刷新 react 组件显示(详细参考 mobx-react)。
 
 如：
 
@@ -132,6 +132,26 @@ export default injectIntl(LoginScreen);
 # 5.导航
 
 # 6.iconfont 使用
+
+从 iconfont 平台找 icon 或自己设计 icon 向量图标然后导入 iconfont 平台再从 iconfont 平台导出 ttf 文件配置到项目里(这个版本 ios 已配置好，如需更新直接替换 ttf 文件即可，android 版本后面补充)。
+
+iconfont 目录文件：
+
+- icon 编码对照 map 文件：src/common/iconfont/iconfont.json
+- iconfont 向量图标组件化文件：src/common/iconfont/iconfont.tsx
+- ttf 文件(从 iconfont 平台导出):src/common/iconfont/iconfont.ttf
+
+使用：
+
+```
+import * as Iconfont from '@/common/iconfont/Iconfont';
+
+const icon = ()=>{
+    return (
+        <Iconfont.Phone />
+    )
+}
+```
 
 # 7.日志格式统一
 
