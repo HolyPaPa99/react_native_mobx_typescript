@@ -100,7 +100,7 @@
 
 ## （2）页面监听数据模型数据更新
 
-通过 mobx 的 inject 高阶组件将数据模型注入 react 组件，当模型的数据发生变化的时候自动刷新 react 组件显示。
+通过 mobx 的 inject 高阶组件将数据模型注入 react 组件的 props 中，当模型的数据发生变化的时候自动刷新 react 组件显示。
 
 如：
 
@@ -112,6 +112,22 @@
 # 3.后台服务请求 api 组件开发
 
 # 4.国际化
+
+配置根目录：src/common/intl/
+
+app 国际化语言配置：
+
+- 英文：src/common/intl/lang/en_US.tsx
+- 简体中文：src/common/intl/lang/zh_CN.tsx
+
+应用：
+通过 react-intl 的 injectIntl 高阶组件将 intl 注入到 react 组件的 props 中（详细参考 react-intl）。
+
+如：
+
+```
+export default injectIntl(LoginScreen);
+```
 
 # 5.导航
 
