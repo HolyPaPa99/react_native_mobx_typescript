@@ -45,6 +45,70 @@
 
 # 2.mobx 数据模型定义和页面监控数据变更并自动刷新
 
+## （1）数据模型定义
+
+    数据模型定义根目录：src/models/
+    mobx store：src/models/index.tsx
+
+- 所有数据模型定义必须建立在数据模型定义根目录下
+- 为不同数据模型创建对应的子目录（例如我要新建 User 类，首先创建模型子目录 user/）
+- 对于较为复杂的复合数据模型可以拆分模型文件，但模型的导出文件必须为 index.tsx(例如 User 类 language 属性记录用户选择的语言，简单字符串类型)
+- 修改模型数据属性，必须通过模型的 action 方法
+
+  如：
+
+  ```
+    import {observable, action} from 'mobx';
+    import {getStorage} from '@/common/localStorage/index';
+    import StorageModel from '@/common/localStorage/model/StorageModel';
+
+    class User {
+    @observable language: string = 'en';
+
+    @action setLanguage(language: string) {
+        this.language = language;
+    }
+    constructor() {
+        getStorage().then((storage: StorageModel) => {
+        if (storage && storage.language) {
+            this.setLanguage(storage.language);
+        }
+        });
+    }
+    }
+
+    const userStore = new User();
+
+    export default userStore;
+  ```
+
+- 将新数据模型注册到 mobx store
+
+  如：
+
+  ```
+  import todoStore from './todo';
+  import userStore from './user';
+
+  const stores = {
+    todoStore,
+    userStore,
+  };
+
+  export default stores;
+  ```
+
+## （2）页面监听数据模型数据更新
+
+通过 mobx 的 inject 高阶组件将数据模型注入 react 组件，当模型的数据发生变化的时候自动刷新 react 组件显示。
+
+如：
+
+```
+    @inject('userStore')
+    class LoginScreen extends React.Component
+```
+
 # 3.后台服务请求 api 组件开发
 
 # 4.国际化
@@ -62,3 +126,7 @@
 # 10.页面开发规范
 
 # 11.分辨率自适应问题
+
+```
+
+```
