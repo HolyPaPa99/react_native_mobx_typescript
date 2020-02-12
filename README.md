@@ -31,3 +31,16 @@
 ```
 
 ---
+
+# 1.概述
+
+这是一个应用 typescript 面向对象编程的基础框架项目，以注册登录功能为例搭建基于 ReactNative+mobx 的移动端开发框架。框架整合的主要第三方库包括：
+
+- react-native
+- mobx
+- axios 异步请求
+- react-intl 国际化（这个版本做简体中文和英文支持）
+- react-navigation 导航
+- iconfont 阿里向量图标平台应用代码
+
+
