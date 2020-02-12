@@ -155,6 +155,17 @@ const icon = ()=>{
 
 # 7.日志格式统一
 
+为了统一日志输入格式，封装了日志打印组件。
+
+src/common/log/index.tsx
+
+```
+import Log from '@/common/log';
+
+Log.info('hello')
+Log.error('This is an error')
+```
+
 # 8.公共组件开发规范
 
 # 9.UI 组件开发规范
@@ -162,7 +173,3 @@ const icon = ()=>{
 # 10.页面开发规范
 
 # 11.分辨率自适应问题
-
-```
-
-```
