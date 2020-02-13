@@ -168,7 +168,8 @@ Log.error('This is an error')
 
 # 8.分辨率自适应
 
-所有页面组件尺寸都统一使用 ScreenUtil 工具进行分辨率计算。
+所有页面组件尺寸大小都统一使用 ScreenUtil 工具进行分辨率计算。
+如：
 
 ```
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
@@ -176,8 +177,12 @@ import * as ScreenUtil from '@/common/utils/ScreenUtil';
 const itemHeight = ScreenUtil.scaleSize(48);
 ```
 
-# 9.公共组件开发规范
+# 9.表单组件开发
 
-# 10.UI 组件开发规范
+新增表单组件需继承 FormItem 抽象类，组件 props 需继承 FormItemProps，组件 state 需继承 FormItemState。
 
-# 11.页面开发规范
+# 10.公共组件开发规范
+
+# 11.UI 组件开发规范
+
+# 12.页面开发规范
