@@ -168,6 +168,14 @@ Log.error('This is an error')
 
 # 8.分辨率自适应
 
+所有页面组件尺寸都统一使用 ScreenUtil 工具进行分辨率计算。
+
+```
+import * as ScreenUtil from '@/common/utils/ScreenUtil';
+
+const itemHeight = ScreenUtil.scaleSize(48);
+```
+
 # 9.公共组件开发规范
 
 # 10.UI 组件开发规范
