@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
+import {View, Text, SafeAreaView} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
 import {inject} from 'mobx-react';
