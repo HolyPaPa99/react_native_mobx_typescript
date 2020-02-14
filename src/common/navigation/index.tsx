@@ -1,5 +1,7 @@
 import HomeScreen from '@/screens/home';
 import LoginScreen from '@/screens/login';
+import ForgetPassword from '@/screens/login/ForgetPassword';
+import Register from '@/screens/login/Register';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 
@@ -24,6 +26,8 @@ const RouteConfigs = {
     },
   },
   Login: LoginScreen,
+  ForgetPassword: ForgetPassword,
+  Register: Register,
 };
 
 const NavigatorConfig = {

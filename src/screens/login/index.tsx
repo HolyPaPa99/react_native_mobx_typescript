@@ -31,6 +31,7 @@ class LoginScreen extends React.Component<
   render() {
     Log.info('render login screen');
     const {formatMessage} = this.props.intl;
+    const {navigation} = this.props;
     return (
       <SafeAreaView style={{backgroundColor: '#5EA2EC', flex: 1}}>
         <Statement />
@@ -98,6 +99,7 @@ class LoginScreen extends React.Component<
                   text: formatMessage({id: 'intl.screen.login.forgetPassword'}),
                   onPress: () => {
                     console.log('忘记密码');
+                    navigation.navigate('ForgetPassword');
                   },
                 },
                 {
@@ -106,6 +108,7 @@ class LoginScreen extends React.Component<
                   }),
                   onPress: () => {
                     console.log('注册账号');
+                    navigation.navigate('Register');
                   },
                 },
               ]}
