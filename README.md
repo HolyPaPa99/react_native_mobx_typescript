@@ -179,7 +179,11 @@ const itemHeight = ScreenUtil.scaleSize(48);
 
 # 9.表单组件开发
 
+表单组件目录：src/components/form
+
 新增表单组件需继承 FormItem 抽象类，组件 props 需继承 FormItemProps，组件 state 需继承 FormItemState。
+
+如：
 
 ```
 import React from 'react';
@@ -254,8 +258,18 @@ export default class extends FormItem<PasswordProps, PasswordState> {
 
 ```
 
-# 10.公共组件开发规范
+# 10.框架公共组件及工具开发
 
-# 11.UI 组件开发规范
+根目录：src/common/
 
-# 12.页面开发规范
+# 11.UI 组件开发
+
+根目录：src/components/
+
+# 12.页面开发
+
+根目录：src/screens
+
+# 13.系统配置
+
+根目录：src/config
