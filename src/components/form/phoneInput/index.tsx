@@ -12,6 +12,7 @@ import FormItem, {
   FormItemState,
 } from '@/components/form/FormItem';
 import Log from '@/common/log';
+import Theme from '@/common/theme';
 
 interface PhoneInputProps extends FormItemProps {
   style?: any;
@@ -41,7 +42,11 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
           ...this.props.style,
         }}>
         <Iconfont.Phone />
-        <Label text={this.props.areaCode} style={{paddingHorizontal: 0}} />
+        <Label
+          text={this.props.areaCode}
+          style={{paddingHorizontal: 0}}
+          textStyle={{color: Theme.FORM_PLACEHOLDER_COLOR}}
+        />
         <View style={InputStyle.container}>
           <TextInput
             placeholder={this.props.placeholder}

@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Image, ImageBackground} from 'react-native';
+import {View, Image} from 'react-native';
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
-const logo = require('@/assets/png/login/logo.png');
-
+import Theme from '@/common/theme';
 export default class Statement extends React.Component {
   render() {
     return (
@@ -13,12 +12,12 @@ export default class Statement extends React.Component {
           alignItems: 'center',
         }}>
         <Image
-          source={logo}
+          source={Theme.STATEMENT_TEXT}
           resizeMode="contain"
           resizeMethod="resize"
           style={{
-            width: ScreenUtil.scaleSize(414),
-            height: ScreenUtil.scaleSize(212),
+            width: ScreenUtil.scaleSize(347),
+            height: ScreenUtil.scaleSize(80),
           }}
         />
       </View>

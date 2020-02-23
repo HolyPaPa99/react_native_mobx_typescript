@@ -5,6 +5,7 @@ import {injectIntl} from 'react-intl';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {inject} from 'mobx-react';
 import {mergeStorage} from '@/common/localStorage';
+import Theme from '@/common/theme';
 
 @inject('userStore')
 class LanguageSwitch extends React.Component<any> {
@@ -30,7 +31,7 @@ class LanguageSwitch extends React.Component<any> {
           <Text
             style={{
               fontSize: scaleSize(16),
-              color: '#5EA2EC',
+              color: Theme.THEME_COLOR,
               lineHeight: scaleSize(26),
               textAlign: 'center',
             }}>
@@ -50,7 +51,7 @@ class LanguageSwitch extends React.Component<any> {
           <Text
             style={{
               fontSize: scaleSize(16),
-              color: '#5EA2EC',
+              color: Theme.THEME_COLOR,
               lineHeight: scaleSize(26),
               textAlign: 'center',
             }}>

@@ -5,7 +5,7 @@ import Log from '@/common/log';
 export const PhoneValidator: Validator = (value: string): boolean => {
   Log.info('PhoneValidator:' + value);
   if (isEmpty(value)) {
-    throw '请输入手机号码';
+    throw 'FE0001';
   }
   return true;
 };

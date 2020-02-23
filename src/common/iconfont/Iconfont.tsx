@@ -2,6 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createIconSet} from 'react-native-vector-icons';
 import {scaleSize} from '@/common/utils/ScreenUtil';
+import Theme from '@/common/theme'
 
 //init iconSet
 const glyphMap = require('./iconfont.json');
@@ -27,7 +28,7 @@ export const Icon = (props: {
     <IconSet
       name={props.name}
       size={Number(props.size || scaleSize(18))}
-      color={props.color || '#D8D8D8'}
+      color={props.color || Theme.THEME_COLOR}
     />
   </View>
 );

@@ -8,6 +8,7 @@ import FormItem, {
   FormItemState,
 } from '@/components/form/FormItem';
 import Log from '@/common/log';
+import Theme from '@/common/theme';
 
 interface PickerProps extends FormItemProps {
   style?: any;
@@ -35,7 +36,10 @@ export default class extends FormItem<PickerProps, PickerState> {
           ...ComponentStyle.container,
           ...this.props.style,
         }}>
-        <Label text={this.props.label} />
+        <Label
+          text={this.props.label}
+          textStyle={{color: Theme.FORM_PLACEHOLDER_COLOR}}
+        />
         <TouchableOpacity style={{flex: 2, flexDirection: 'row'}}>
           <Label text={this.props.text} style={{flex: 1}} />
           <Iconfont.RightIndicator />

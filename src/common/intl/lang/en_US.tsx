@@ -8,6 +8,7 @@ const en = {
   'intl.screen.login.forgetPassword': 'Forget Password',
   'intl.screen.login.registerAccount': 'Register Account',
   'intl.screen.login.country': 'Country/Area',
+  'FE0001': 'Phone number is required',
 };
 
 export default en;
