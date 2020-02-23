@@ -42,7 +42,7 @@ export default class extends FormItem<PickerProps, PickerState> {
         />
         <TouchableOpacity style={{flex: 2, flexDirection: 'row'}}>
           <Label text={this.props.text} style={{flex: 1}} />
-          <Iconfont.RightIndicator />
+          <Iconfont.RightIndicator color={Theme.FORM_PLACEHOLDER_COLOR}/>
         </TouchableOpacity>
       </View>
     );

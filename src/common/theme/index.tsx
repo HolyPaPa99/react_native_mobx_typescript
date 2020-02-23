@@ -1,3 +1,4 @@
 import * as purpleBlueTheme from './PurpleBlue';
+import * as pinkBlueTheme from './PinkBlue'
 
-export default purpleBlueTheme;
+export default pinkBlueTheme;
