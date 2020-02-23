@@ -46,7 +46,7 @@ export default class extends FormItem<PasswordProps, PasswordState> {
             placeholder={this.props.placeholder}
             placeholderTextColor={placeholderTextColor}
             clearButtonMode="always"
-            style={InputStyle.textInput}
+            style={{...InputStyle.textInput, paddingLeft: 0}}
             onChangeText={value => {
               this.setState({value: value});
             }}
