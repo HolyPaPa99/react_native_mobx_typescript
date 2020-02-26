@@ -2,18 +2,14 @@ import {StyleSheet} from 'react-native';
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
 import Theme from '@/common/theme';
 
-export const placeholderTextColor = Theme.Color.Font.Font1;
-export const fontColor = Theme.Color.Font.Font2;
 export const itemHeight = ScreenUtil.scaleSize(48);
-export const fontSize = ScreenUtil.scaleSize(16);
+export const placeholderTextColor = Theme.Color.Font.Font1;
 export const inputPaddingHorizontal = ScreenUtil.scaleSize(10);
 export const containerPaddingHorizontal = ScreenUtil.scaleSize(15);
 export const borderWidth = 0.5;
 export const borderColor = Theme.Color.Border.Border1;
 export const borderRadius = ScreenUtil.scaleSize(5);
 export const marginWidth = ScreenUtil.scaleSize(5);
-export const buttonHeight = ScreenUtil.scaleSize(56);
-export const buttonColor = Theme.Color.Status.Primary;
 
 export const ComponentStyle = StyleSheet.create({
   container: {
@@ -33,9 +29,8 @@ export const InputStyle = StyleSheet.create({
     justifyContent: 'center',
   },
   textInput: {
-    fontSize: fontSize,
+    ...Theme.FontStyles.Font3,
     paddingHorizontal: inputPaddingHorizontal,
-    color: fontColor,
   },
 });
 
@@ -45,10 +40,7 @@ export const LabelStyle = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: containerPaddingHorizontal,
   },
-  text: {
-    fontSize: fontSize,
-    color: fontColor,
-  },
+  text: Theme.FontStyles.Font2,
 });
 
 export const ErrorMessageStyle = StyleSheet.create({
@@ -59,8 +51,5 @@ export const ErrorMessageStyle = StyleSheet.create({
     paddingHorizontal: containerPaddingHorizontal,
     marginBottom: marginWidth,
   },
-  text: {
-    color: Theme.Color.Font.Font6,
-    fontSize: fontSize,
-  },
+  text: Theme.FontStyles.Font5,
 });

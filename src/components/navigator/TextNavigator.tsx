@@ -10,7 +10,7 @@ class Separator extends React.Component {
         style={{
           width: 0.5,
           height: scaleSize(14),
-          backgroundColor: Theme.THEME_COLOR,
+          backgroundColor: Theme.Color.Background.Background3,
           marginHorizontal: scaleSize(10),
         }}></View>
     );
@@ -42,10 +42,7 @@ class TextNavigator extends React.Component<{
             if (index === 0) {
               return (
                 <TouchableOpacity onPress={item.onPress} key={index}>
-                  <Text
-                    style={{color: Theme.Color.Font.Font4, fontSize: scaleSize(16)}}>
-                    {item.text}
-                  </Text>
+                  <Text style={Theme.FontStyles.Font4}>{item.text}</Text>
                 </TouchableOpacity>
               );
             } else {
@@ -53,13 +50,7 @@ class TextNavigator extends React.Component<{
                 <React.Fragment key={index}>
                   <Separator />
                   <TouchableOpacity onPress={item.onPress}>
-                    <Text
-                      style={{
-                        color: Theme.Color.Font.Font4,
-                        fontSize: scaleSize(16),
-                      }}>
-                      {item.text}
-                    </Text>
+                    <Text style={Theme.FontStyles.Font4}>{item.text}</Text>
                   </TouchableOpacity>
                 </React.Fragment>
               );

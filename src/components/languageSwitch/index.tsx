@@ -28,13 +28,7 @@ class LanguageSwitch extends React.Component<any> {
             this.props.userStore.setLanguage('en');
             mergeStorage({language: 'en'});
           }}>
-          <Text
-            style={{
-              fontSize: scaleSize(16),
-              color: Theme.Color.Font.Font4,
-              lineHeight: scaleSize(26),
-              textAlign: 'center',
-            }}>
+          <Text style={Theme.FontStyles.Font11}>
             {formatMessage({id: 'intl.user.language.en'})}
           </Text>
         </TouchableOpacity>
@@ -48,13 +42,7 @@ class LanguageSwitch extends React.Component<any> {
             this.props.userStore.setLanguage('zh');
             mergeStorage({language: 'zh'});
           }}>
-          <Text
-            style={{
-              fontSize: scaleSize(16),
-              color: Theme.Color.Font.Font4,
-              lineHeight: scaleSize(26),
-              textAlign: 'center',
-            }}>
+          <Text style={Theme.FontStyles.Font11}>
             {formatMessage({id: 'intl.user.language.zh'})}
           </Text>
         </TouchableOpacity>

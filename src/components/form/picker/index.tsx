@@ -36,13 +36,14 @@ export default class extends FormItem<PickerProps, PickerState> {
           ...ComponentStyle.container,
           ...this.props.style,
         }}>
-        <Label
-          text={this.props.label}
-          textStyle={{color: Theme.Color.Font.Font1}}
-        />
+        <Label text={this.props.label} />
         <TouchableOpacity style={{flex: 2, flexDirection: 'row'}}>
-          <Label text={this.props.text} style={{flex: 1}} />
-          <Iconfont.RightIndicator color={Theme.Color.Font.Font2}/>
+          <Label
+            text={this.props.text}
+            style={{flex: 1}}
+            textStyle={{color: Theme.Color.Font.Font2}}
+          />
+          <Iconfont.RightIndicator color={Theme.Color.Font.Font1} />
         </TouchableOpacity>
       </View>
     );
