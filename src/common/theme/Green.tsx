@@ -85,4 +85,16 @@ export const FontStyles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: ScreenUtil.scaleSize(25),
   },
+  Font9: {
+    color: Color.Font.Font3,
+    fontSize: ScreenUtil.scaleSize(24),
+    fontWeight: '400',
+    lineHeight: ScreenUtil.scaleSize(33),
+  },
+  Font10: {
+    color: Color.Font.Font4,
+    fontSize: ScreenUtil.scaleSize(24),
+    fontWeight: '400',
+    lineHeight: ScreenUtil.scaleSize(33),
+  },
 });

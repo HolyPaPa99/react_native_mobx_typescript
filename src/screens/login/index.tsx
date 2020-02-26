@@ -5,13 +5,8 @@ import {injectIntl} from 'react-intl';
 import {inject} from 'mobx-react';
 
 import Statement from './Statement';
-import {
-  Form,
-  Picker,
-  PhoneInput,
-  PasswordInput,
-  Button,
-} from '@/components/form';
+import {Form, Picker, PhoneInput, PasswordInput} from '@/components/form';
+import Button from '@/components/button';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import {PhoneValidator} from '@/components/form/FormValidator';
 import Log from '@/common/log';
@@ -62,7 +57,10 @@ class LoginScreen extends React.Component<
                     justifyContent: 'center',
                   }}>
                   <Text
-                    style={{fontSize: scaleSize(28), color: Theme.Color.Font.Font4}}>
+                    style={{
+                      fontSize: scaleSize(28),
+                      color: Theme.Color.Font.Font4,
+                    }}>
                     {formatMessage({id: 'intl.screen.login.title'})}
                   </Text>
                 </View>
@@ -88,6 +86,7 @@ class LoginScreen extends React.Component<
                   />
                 </Form>
                 <Button
+                  type="primary"
                   value={formatMessage({id: 'intl.button.next'})}
                   onPress={() => {
                     if (this.formRef instanceof Form) {

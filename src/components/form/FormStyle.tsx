@@ -51,21 +51,6 @@ export const LabelStyle = StyleSheet.create({
   },
 });
 
-export const ButtonStyle = StyleSheet.create({
-  container: {
-    height: buttonHeight,
-    backgroundColor: buttonColor,
-    borderRadius: borderRadius,
-    opacity: 0.8,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: ScreenUtil.scaleSize(24),
-    color: Theme.Color.Font.Font3,
-  },
-});
-
 export const ErrorMessageStyle = StyleSheet.create({
   container: {
     height: itemHeight,
