@@ -1,4 +1,4 @@
-import * as purpleBlueTheme from './PurpleBlue';
-import * as pinkBlueTheme from './PinkBlue'
+import * as blue from './Blue';
+import * as green from './Green';
 
-export default pinkBlueTheme;
+export default green;

@@ -12,7 +12,7 @@ export default class Statement extends React.Component {
           alignItems: 'center',
         }}>
         <Image
-          source={Theme.STATEMENT_TEXT}
+          source={Theme.Image.LoginStatement}
           resizeMode="contain"
           resizeMethod="resize"
           style={{

@@ -2,18 +2,18 @@ import {StyleSheet} from 'react-native';
 import * as ScreenUtil from '@/common/utils/ScreenUtil';
 import Theme from '@/common/theme';
 
-export const placeholderTextColor = Theme.FORM_PLACEHOLDER_COLOR;
-export const fontColor = Theme.FONT_COLOR;
+export const placeholderTextColor = Theme.Color.Font.Font1;
+export const fontColor = Theme.Color.Font.Font2;
 export const itemHeight = ScreenUtil.scaleSize(48);
 export const fontSize = ScreenUtil.scaleSize(16);
 export const inputPaddingHorizontal = ScreenUtil.scaleSize(10);
 export const containerPaddingHorizontal = ScreenUtil.scaleSize(15);
 export const borderWidth = 0.5;
-export const borderColor = Theme.FORM_BORDER_COLOR;
+export const borderColor = Theme.Color.Border.Border1;
 export const borderRadius = ScreenUtil.scaleSize(5);
 export const marginWidth = ScreenUtil.scaleSize(5);
 export const buttonHeight = ScreenUtil.scaleSize(56);
-export const buttonColor = Theme.THEME_COLOR;
+export const buttonColor = Theme.Color.Status.Primary;
 
 export const ComponentStyle = StyleSheet.create({
   container: {
@@ -62,7 +62,7 @@ export const ButtonStyle = StyleSheet.create({
   },
   text: {
     fontSize: ScreenUtil.scaleSize(24),
-    color: Theme.LINING_COLOR,
+    color: Theme.Color.Font.Font3,
   },
 });
 
@@ -75,7 +75,7 @@ export const ErrorMessageStyle = StyleSheet.create({
     marginBottom: marginWidth,
   },
   text: {
-    color: Theme.ERROR_COLOR,
+    color: Theme.Color.Font.Font6,
     fontSize: fontSize,
   },
 });

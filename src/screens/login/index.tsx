@@ -35,7 +35,7 @@ class LoginScreen extends React.Component<
     const {navigation} = this.props;
     return (
       <ImageBackground
-        source={Theme.BACKGROUND_LOGIN}
+        source={Theme.Image.LoginBackground}
         style={{width: '100%', height: '100%'}}>
         <SafeAreaView style={{flex: 1}}>
           <Statement />
@@ -49,7 +49,7 @@ class LoginScreen extends React.Component<
               style={{
                 flex: 1,
                 borderRadius: scaleSize(10),
-                backgroundColor: Theme.LINING_COLOR,
+                backgroundColor: Theme.Color.Background.Background1,
                 paddingHorizontal: scaleSize(27),
               }}>
               <View style={{flex: 1}}>
@@ -62,7 +62,7 @@ class LoginScreen extends React.Component<
                     justifyContent: 'center',
                   }}>
                   <Text
-                    style={{fontSize: scaleSize(28), color: Theme.THEME_COLOR}}>
+                    style={{fontSize: scaleSize(28), color: Theme.Color.Font.Font4}}>
                     {formatMessage({id: 'intl.screen.login.title'})}
                   </Text>
                 </View>

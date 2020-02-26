@@ -43,7 +43,7 @@ class TextNavigator extends React.Component<{
               return (
                 <TouchableOpacity onPress={item.onPress} key={index}>
                   <Text
-                    style={{color: Theme.THEME_COLOR, fontSize: scaleSize(16)}}>
+                    style={{color: Theme.Color.Font.Font4, fontSize: scaleSize(16)}}>
                     {item.text}
                   </Text>
                 </TouchableOpacity>
@@ -55,7 +55,7 @@ class TextNavigator extends React.Component<{
                   <TouchableOpacity onPress={item.onPress}>
                     <Text
                       style={{
-                        color: Theme.THEME_COLOR,
+                        color: Theme.Color.Font.Font4,
                         fontSize: scaleSize(16),
                       }}>
                       {item.text}

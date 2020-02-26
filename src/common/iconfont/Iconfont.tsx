@@ -28,7 +28,7 @@ export const Icon = (props: {
     <IconSet
       name={props.name}
       size={Number(props.size || scaleSize(18))}
-      color={props.color || Theme.THEME_COLOR}
+      color={props.color || Theme.Color.Icon.Icon1}
     />
   </View>
 );

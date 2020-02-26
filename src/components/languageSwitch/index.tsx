@@ -31,7 +31,7 @@ class LanguageSwitch extends React.Component<any> {
           <Text
             style={{
               fontSize: scaleSize(16),
-              color: Theme.THEME_COLOR,
+              color: Theme.Color.Font.Font4,
               lineHeight: scaleSize(26),
               textAlign: 'center',
             }}>
@@ -51,7 +51,7 @@ class LanguageSwitch extends React.Component<any> {
           <Text
             style={{
               fontSize: scaleSize(16),
-              color: Theme.THEME_COLOR,
+              color: Theme.Color.Font.Font4,
               lineHeight: scaleSize(26),
               textAlign: 'center',
             }}>
