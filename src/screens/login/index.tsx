@@ -69,6 +69,12 @@ class LoginScreen extends React.Component<
                     name="areaCode"
                     label={formatMessage({id: 'intl.screen.login.country'})}
                     text="中国"
+                    style={{
+                      borderWidth: 0.5,
+                      borderColor: Theme.Color.Border.Border1,
+                      borderRadius: 5,
+                      marginBottom: scaleSize(5),
+                    }}
                   />
                   <PhoneInput
                     areaCode="+86"
@@ -77,12 +83,24 @@ class LoginScreen extends React.Component<
                       id: 'intl.input.phone.placeholder',
                     })}
                     validator={PhoneValidator}
+                    style={{
+                      borderWidth: 0.5,
+                      borderColor: Theme.Color.Border.Border1,
+                      borderRadius: 5,
+                      marginBottom: scaleSize(5),
+                    }}
                   />
                   <PasswordInput
                     name="password"
                     placeholder={formatMessage({
                       id: 'intl.input.password.placeholder',
                     })}
+                    style={{
+                      borderWidth: 0.5,
+                      borderColor: Theme.Color.Border.Border1,
+                      borderRadius: 5,
+                      marginBottom: scaleSize(5),
+                    }}
                   />
                 </Form>
                 <Button

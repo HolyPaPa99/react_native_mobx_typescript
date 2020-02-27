@@ -1,15 +1,12 @@
 import React from 'react';
-import {View, TextInput, TouchableOpacity} from 'react-native';
+import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
-import {
-  placeholderTextColor,
-  ComponentStyle,
-  InputStyle,
-} from '@/components/form/FormStyle';
+import Theme from '@/common/theme';
 import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import {scaleSize} from '@/common/utils/ScreenUtil';
 import Log from '@/common/log';
 
 interface PasswordProps extends FormItemProps {
@@ -36,17 +33,22 @@ export default class extends FormItem<PasswordProps, PasswordState> {
           ...{
             flexGrow: 3,
             flexDirection: 'row',
+            height: scaleSize(48),
           },
-          ...ComponentStyle.container,
           ...this.props.style,
         }}>
         <Iconfont.PasswordFilled />
-        <View style={InputStyle.container}>
+        <View
+          style={{
+            flex: 1,
+            height: scaleSize(48),
+            justifyContent: 'center',
+          }}>
           <TextInput
             placeholder={this.props.placeholder}
-            placeholderTextColor={placeholderTextColor}
+            placeholderTextColor={Theme.Color.Font.Font1}
             clearButtonMode="always"
-            style={{...InputStyle.textInput, paddingLeft: 0}}
+            style={Theme.FontStyles.Font3}
             onChangeText={value => {
               this.setState({value: value});
             }}

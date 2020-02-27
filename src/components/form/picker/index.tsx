@@ -2,11 +2,11 @@ import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import Label from '@/components/form/label';
-import {ComponentStyle} from '@/components/form/FormStyle';
 import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
+import {scaleSize} from '@/common/utils/ScreenUtil'
 import Log from '@/common/log';
 import Theme from '@/common/theme';
 
@@ -32,8 +32,8 @@ export default class extends FormItem<PickerProps, PickerState> {
           ...{
             flexGrow: 2,
             flexDirection: 'row',
+            height:scaleSize(48),
           },
-          ...ComponentStyle.container,
           ...this.props.style,
         }}>
         <Label text={this.props.label} />

@@ -53,7 +53,6 @@ export const FontStyles = StyleSheet.create({
     color: Color.Font.Font2,
     fontSize: ScreenUtil.scaleSize(16),
     fontWeight: '400',
-    lineHeight: ScreenUtil.scaleSize(22),
   },
   Font4: {
     color: Color.Font.Font4,

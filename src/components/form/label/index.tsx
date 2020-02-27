@@ -1,8 +1,19 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
-import {LabelStyle} from '@/components/form/FormStyle';
+import {scaleSize} from '@/common/utils/ScreenUtil';
+import Theme from '@/common/theme';
 import Log from '@/common/log';
+
+const defaultStyles = StyleSheet.create({
+  container: {
+    height: scaleSize(48),
+    justifyContent: 'center',
+    paddingHorizontal: scaleSize(15),
+    marginBottom: scaleSize(5),
+  },
+  text: Theme.FontStyles.Font2,
+});
 
 export default class extends React.Component<{
   text?: string | undefined;
@@ -12,8 +23,8 @@ export default class extends React.Component<{
   render() {
     Log.info('render Label');
     return (
-      <View style={{...LabelStyle.container, ...this.props.style}}>
-        <Text style={{...LabelStyle.text, ...this.props.textStyle}}>
+      <View style={{...defaultStyles.container, ...this.props.style}}>
+        <Text style={{...defaultStyles.text, ...this.props.textStyle}}>
           {this.props.text}
         </Text>
       </View>

@@ -1,18 +1,14 @@
 import React from 'react';
-import {View, TextInput} from 'react-native';
+import {View, TextInput, StyleSheet} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
-import {
-  InputStyle,
-  placeholderTextColor,
-  ComponentStyle,
-} from '@/components/form/FormStyle';
+import {scaleSize} from '@/common/utils/ScreenUtil';
 import Label from '@/components/form/label';
 import FormItem, {
   FormItemProps,
   FormItemState,
 } from '@/components/form/FormItem';
 import Log from '@/common/log';
-import Theme from '@/common/theme'
+import Theme from '@/common/theme';
 
 interface PhoneInputProps extends FormItemProps {
   style?: any;
@@ -37,17 +33,30 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
           ...{
             flexGrow: 3,
             flexDirection: 'row',
+            height: scaleSize(48),
           },
-          ...ComponentStyle.container,
           ...this.props.style,
         }}>
         <Iconfont.Phone />
-        <Label text={this.props.areaCode} style={{paddingHorizontal: 0}} textStyle={{color:Theme.Color.Font.Font1}}/>
-        <View style={InputStyle.container}>
+        <Label
+          text={this.props.areaCode}
+          style={{paddingHorizontal: 0}}
+          textStyle={{color: Theme.Color.Font.Font1}}
+        />
+        <View
+          style={{
+            flex: 1,
+            height: scaleSize(48),
+            justifyContent: 'center',
+            paddingRight: scaleSize(10),
+          }}>
           <TextInput
             placeholder={this.props.placeholder}
-            placeholderTextColor={placeholderTextColor}
-            style={InputStyle.textInput}
+            placeholderTextColor={Theme.Color.Font.Font1}
+            style={{
+              ...Theme.FontStyles.Font3,
+              paddingHorizontal: scaleSize(10),
+            }}
             defaultValue={this.props.defaultValue}
             clearButtonMode="always"
             onChangeText={(text: any) => {
