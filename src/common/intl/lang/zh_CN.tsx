@@ -8,7 +8,8 @@ const zh = {
   'intl.screen.login.forgetPassword': '忘记密码',
   'intl.screen.login.registerAccount': '注册账号',
   'intl.screen.login.country': '国家/地区',
-  'FE0001':'请输入手机号码'
+  'FE0001': '请输入手机号码',
+  'FE0002': '请输入密码',
 };
 
 export default zh;

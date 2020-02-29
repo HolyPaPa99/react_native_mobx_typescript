@@ -53,6 +53,7 @@ export default class extends FormItem<PasswordProps, PasswordState> {
               this.setState({value: value});
             }}
             secureTextEntry={this.state.secureTextEntry}
+            maxLength={16}
           />
         </View>
         <TouchableOpacity

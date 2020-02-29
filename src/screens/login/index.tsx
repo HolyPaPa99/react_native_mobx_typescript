@@ -8,7 +8,7 @@ import Statement from './Statement';
 import {Form, Picker, PhoneInput, PasswordInput} from '@/components/form';
 import Button from '@/components/button';
 import {scaleSize} from '@/common/utils/ScreenUtil';
-import {PhoneValidator} from '@/components/form/FormValidator';
+import * as Validator from '@/components/form/FormValidator';
 import Log from '@/common/log';
 import LanguageSwitch from '@/components/languageSwitch';
 import TextNavigator from '@/components/navigator/TextNavigator';
@@ -82,7 +82,7 @@ class LoginScreen extends React.Component<
                     placeholder={formatMessage({
                       id: 'intl.input.phone.placeholder',
                     })}
-                    validator={PhoneValidator}
+                    validator={Validator.PhoneValidator}
                     style={{
                       borderWidth: 0.5,
                       borderColor: Theme.Color.Border.Border1,
@@ -95,6 +95,7 @@ class LoginScreen extends React.Component<
                     placeholder={formatMessage({
                       id: 'intl.input.password.placeholder',
                     })}
+                    validator={Validator.PasswordValidator}
                     style={{
                       borderWidth: 0.5,
                       borderColor: Theme.Color.Border.Border1,

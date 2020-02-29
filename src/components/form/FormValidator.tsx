@@ -9,3 +9,11 @@ export const PhoneValidator: Validator = (value: string): boolean => {
   }
   return true;
 };
+
+export const PasswordValidator: Validator = (value: string): boolean => {
+  Log.info('PasswordValidator:' + value);
+  if (isEmpty(value)) {
+    throw 'FE0002';
+  }
+  return true;
+};

@@ -62,6 +62,7 @@ export default class extends FormItem<PhoneInputProps, PhoneInputState> {
             onChangeText={(text: any) => {
               this.setState({value: text});
             }}
+            maxLength={20}
           />
         </View>
       </View>

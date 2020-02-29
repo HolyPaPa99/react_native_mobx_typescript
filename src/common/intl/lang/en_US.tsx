@@ -9,6 +9,7 @@ const en = {
   'intl.screen.login.registerAccount': 'Register Account',
   'intl.screen.login.country': 'Country/Area',
   'FE0001': 'Phone number is required',
+  'FE0002': 'Password is required',
 };
 
 export default en;
