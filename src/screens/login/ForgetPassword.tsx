@@ -1,6 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import * as Form from '@/components/form';
+import Success from '@/components/success';
 
 export default class extends React.Component {
   render() {
@@ -16,7 +17,7 @@ export default class extends React.Component {
         <Form.Separator />
         <Form.UserNameInput placeholder="请输入昵称" />
         <Form.Separator />
-        <Form.Success infoText="注册成功，马上登录体验吧！" />
+        <Success infoText="注册成功，马上登录体验吧！" />
         <Form.Separator />
       </View>
     );
