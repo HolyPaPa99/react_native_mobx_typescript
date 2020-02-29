@@ -13,6 +13,7 @@ export default class extends React.Component {
           touchableText="发送"
           onPress={() => console.log('send')}
         />
+        <Form.Separator/>
       </View>
     );
   }

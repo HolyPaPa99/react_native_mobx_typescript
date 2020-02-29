@@ -7,6 +7,7 @@ import picker from './picker';
 import message from './message';
 import touchableInput from './touchableInput';
 import FormItem from './FormItem';
+import Theme from '@/common/theme';
 import Log from '@/common/log';
 export class Form extends React.Component<any, {errMsg: string}> {
   private childrenRef: Array<any> = [];
@@ -66,3 +67,10 @@ export const PhoneInput = phoneInput;
 export const PasswordInput = passwordInput;
 export const ErrorMessage = message;
 export const TouchableInput = touchableInput;
+export const Separator = () => (
+  <View
+    style={{
+      height: 0.5,
+      backgroundColor: Theme.Color.Background.Background5,
+    }}></View>
+);

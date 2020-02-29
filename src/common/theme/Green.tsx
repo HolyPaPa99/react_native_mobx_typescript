@@ -24,6 +24,7 @@ export const Color = {
     Background2: 'rgba(0,0,0,0.1)',
     Background3: '#78d7c7',
     Background4: 'rgba(0,0,0,0.25)',
+    Background5: '#D8D8D8',
   },
   Icon: {
     Icon1: '#78d7c7',
