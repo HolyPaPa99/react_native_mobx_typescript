@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import * as Form from '@/components/form';
 
 export default class extends React.Component {
@@ -13,9 +13,11 @@ export default class extends React.Component {
           touchableText="发送"
           onPress={() => console.log('send')}
         />
-        <Form.Separator/>
-        <Form.UserNameInput placeholder="请输入昵称"/>
-        <Form.Separator/>
+        <Form.Separator />
+        <Form.UserNameInput placeholder="请输入昵称" />
+        <Form.Separator />
+        <Form.Success infoText="注册成功，马上登录体验吧！" />
+        <Form.Separator />
       </View>
     );
   }
