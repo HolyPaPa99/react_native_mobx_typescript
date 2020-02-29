@@ -5,6 +5,7 @@ import phoneInput from './phoneInput';
 import passwordInput from './passwordInput';
 import picker from './picker';
 import message from './message';
+import touchableInput from './touchableInput';
 import FormItem from './FormItem';
 import Log from '@/common/log';
 export class Form extends React.Component<any, {errMsg: string}> {
@@ -64,3 +65,4 @@ export const Picker = picker;
 export const PhoneInput = phoneInput;
 export const PasswordInput = passwordInput;
 export const ErrorMessage = message;
+export const TouchableInput = touchableInput;

@@ -23,6 +23,7 @@ export const Color = {
     Background1: '#ffffffff',
     Background2: 'rgba(0,0,0,0.1)',
     Background3: '#78d7c7',
+    Background4: 'rgba(0,0,0,0.25)',
   },
   Icon: {
     Icon1: '#78d7c7',
@@ -64,7 +65,6 @@ export const FontStyles = StyleSheet.create({
     color: Color.Font.Font6,
     fontSize: ScreenUtil.scaleSize(16),
     fontWeight: '400',
-    lineHeight: ScreenUtil.scaleSize(22),
   },
   Font6: {
     color: Color.Font.Font3,

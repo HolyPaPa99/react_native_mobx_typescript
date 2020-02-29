@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, StyleSheet} from 'react-native';
+import {View, TextInput} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import Label from '@/components/form/label';
