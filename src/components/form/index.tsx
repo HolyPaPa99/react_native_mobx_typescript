@@ -6,6 +6,7 @@ import passwordInput from './passwordInput';
 import picker from './picker';
 import message from './message';
 import touchableInput from './touchableInput';
+import userNameInput from './userNameInput';
 import FormItem from './FormItem';
 import Theme from '@/common/theme';
 import Log from '@/common/log';
@@ -60,13 +61,6 @@ export class Form extends React.Component<any, {errMsg: string}> {
     );
   }
 }
-
-export const Label = label;
-export const Picker = picker;
-export const PhoneInput = phoneInput;
-export const PasswordInput = passwordInput;
-export const ErrorMessage = message;
-export const TouchableInput = touchableInput;
 export const Separator = () => (
   <View
     style={{
@@ -74,3 +68,10 @@ export const Separator = () => (
       backgroundColor: Theme.Color.Background.Background5,
     }}></View>
 );
+export const Label = label;
+export const Picker = picker;
+export const PhoneInput = phoneInput;
+export const PasswordInput = passwordInput;
+export const ErrorMessage = message;
+export const TouchableInput = touchableInput;
+export const UserNameInput = userNameInput;

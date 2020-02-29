@@ -14,6 +14,8 @@ export default class extends React.Component {
           onPress={() => console.log('send')}
         />
         <Form.Separator/>
+        <Form.UserNameInput placeholder="请输入昵称"/>
+        <Form.Separator/>
       </View>
     );
   }

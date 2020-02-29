@@ -19,5 +19,14 @@
     "twitter": 58974,
     "wechat": 58975,
     "password-filled": 59270,
-    "account-filled": 59306
+    "account-filled": 59306,
+    "email": 58909,
+    "checked": 58910,
+    "forbidden": 58911,
+    "add-rounded": 58912,
+    "user": 58913,
+    "success": 58914,
+    "pass": 58915,
+    "empty": 58908,
+    "accomplish": 58907
 }

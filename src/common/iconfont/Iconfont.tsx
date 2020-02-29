@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {createIconSet} from 'react-native-vector-icons';
 import {scaleSize} from '@/common/utils/ScreenUtil';
-import Theme from '@/common/theme'
+import Theme from '@/common/theme';
 
 //init iconSet
 const glyphMap = require('./iconfont.json');
@@ -290,6 +290,113 @@ export const AccountFilled = (props: {
 }) => (
   <Icon
     name="account-filled"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const Email = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="email"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const Checked = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="checked"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const Forbidden = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="forbidden"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const AddRounded = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="add-rounded"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const User = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon name="user" style={props.style} size={props.size} color={props.color} />
+);
+
+export const Success = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="success"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const Pass = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon name="pass" style={props.style} size={props.size} color={props.color} />
+);
+
+export const Empty = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="empty"
+    style={props.style}
+    size={props.size}
+    color={props.color}
+  />
+);
+
+export const Accomplish = (props: {
+  style?: any;
+  size?: Number | undefined;
+  color?: string | undefined;
+}) => (
+  <Icon
+    name="accomplish"
     style={props.style}
     size={props.size}
     color={props.color}
