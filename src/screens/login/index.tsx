@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, Text, SafeAreaView, ImageBackground} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ImageBackground,
+  StatusBar,
+} from 'react-native';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
 import {inject} from 'mobx-react';
@@ -32,6 +38,7 @@ class LoginScreen extends React.Component<
       <ImageBackground
         source={Theme.Image.LoginBackground}
         style={{width: '100%', height: '100%'}}>
+        <StatusBar barStyle="light-content" />
         <SafeAreaView style={{flex: 1}}>
           <Statement />
           <View
@@ -124,7 +131,9 @@ class LoginScreen extends React.Component<
                     }),
                     onPress: () => {
                       console.log('忘记密码');
-                      navigation.navigate('ForgetPassword');
+                      navigation.navigate('ForgetPassword',{
+                        screen:'Step1'
+                      });
                     },
                   },
                   {

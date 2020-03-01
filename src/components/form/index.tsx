@@ -31,7 +31,7 @@ export class Form extends React.Component<any, {errMsg: string}> {
   /**
    * 验证form表单
    */
-  validateForm() {
+  validateForm(): boolean {
     try {
       this.childrenRef.forEach((item, i) => {
         if (item instanceof FormItem) {
@@ -41,14 +41,15 @@ export class Form extends React.Component<any, {errMsg: string}> {
     } catch (e) {
       Log.error(e);
       this.setState({errMsg: e});
-      return;
+      return false;
     }
     this.setState({errMsg: ''});
+    return true;
   }
   render() {
     Log.info('render Form');
     return (
-      <View>
+      <View style={this.props.style}>
         {React.Children.map(this.props.children, (child, i) => {
           return React.cloneElement(child as React.ReactElement, {
             ref: (ref: any) => {
@@ -61,13 +62,17 @@ export class Form extends React.Component<any, {errMsg: string}> {
     );
   }
 }
-export const Separator = () => (
-  <View
-    style={{
-      height: 0.5,
-      backgroundColor: Theme.Color.Background.Background5,
-    }}></View>
-);
+export class Separator extends React.Component {
+  render() {
+    return (
+      <View
+        style={{
+          height: 0.5,
+          backgroundColor: Theme.Color.Background.Background5,
+        }}></View>
+    );
+  }
+}
 export const Label = label;
 export const Picker = picker;
 export const PhoneInput = phoneInput;

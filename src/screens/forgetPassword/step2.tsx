@@ -1,0 +1,53 @@
+import React from 'react';
+import {SafeAreaView} from 'react-native';
+import {NavigationStackScreenProps} from 'react-navigation-stack';
+import {injectIntl} from 'react-intl';
+
+import {Form, PasswordInput, Separator} from '@/components/form';
+import Button from '@/components/button';
+import {scaleSize} from '@/common/utils/ScreenUtil';
+import * as Validator from '@/components/form/FormValidator';
+import Log from '@/common/log';
+import Theme from '@/common/theme';
+
+class Step2 extends React.Component<
+  {[propName: string]: any} & NavigationStackScreenProps,
+  {}
+> {
+  formRef: any;
+  static navigationOptions = {
+    //headerStyle: {backgroundColor: Theme.Color.Background.Background3},
+    //headerTintColor: Theme.Color.Font.Font3,
+    //headerBackTitleStyle: {display: 'none'},
+    headerShown:false
+  };
+  render() {
+    Log.info('render forget password step1');
+    const {formatMessage} = this.props.intl;
+    const {navigation} = this.props;
+    return (
+      <SafeAreaView>
+        <Form ref={(ref: any) => (this.formRef = ref)}>
+          <PasswordInput
+            placeholder="请输入密码"
+            style={{backgroundColor: Theme.Color.Background.Background1}}
+          />
+          <Separator />
+        </Form>
+        <Button
+          type="primary"
+          value={formatMessage({id: 'intl.button.next'})}
+          onPress={() => {
+            //if (this.formRef.validateForm()) {
+            Log.info(this.formRef.getFormValues());
+            navigation.navigate('Step3');
+            //}
+          }}
+          style={{marginHorizontal: scaleSize(40)}}
+        />
+      </SafeAreaView>
+    );
+  }
+}
+
+export default injectIntl(Step2);
