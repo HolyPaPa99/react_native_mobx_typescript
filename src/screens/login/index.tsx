@@ -142,7 +142,9 @@ class LoginScreen extends React.Component<
                     }),
                     onPress: () => {
                       console.log('注册账号');
-                      navigation.navigate('Register');
+                      navigation.navigate('Register',{
+                        screen: 'Step1'
+                      });
                     },
                   },
                 ]}

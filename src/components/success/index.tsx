@@ -28,7 +28,7 @@ export default class extends React.Component<{
         }}>
         <Iconfont.Success
           size={scaleSize(105)}
-          style={{height: 'auto'}}
+          style={{height: 'auto',width:'auto'}}
           color={Theme.Color.Status.Success}
         />
         <Text style={Theme.FontStyles.Font7}>Success</Text>

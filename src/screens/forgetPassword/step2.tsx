@@ -16,9 +16,6 @@ class Step2 extends React.Component<
 > {
   formRef: any;
   static navigationOptions = {
-    //headerStyle: {backgroundColor: Theme.Color.Background.Background3},
-    //headerTintColor: Theme.Color.Font.Font3,
-    //headerBackTitleStyle: {display: 'none'},
     headerShown:false
   };
   render() {

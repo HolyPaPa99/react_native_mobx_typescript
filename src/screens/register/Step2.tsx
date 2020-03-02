@@ -7,12 +7,12 @@ import Button from '@/components/button';
 import {scaleSize} from '@/common/utils/ScreenUtil';
 import Log from '@/common/log';
 
-class Step3 extends React.Component<
+class Step2 extends React.Component<
   {[propName: string]: any} & NavigationStackScreenProps,
   {}
 > {
   static navigationOptions = {
-    headerShown: false,
+    headerShown:false
   };
   render() {
     Log.info('render forget password step1');
@@ -20,18 +20,18 @@ class Step3 extends React.Component<
     const {navigation} = this.props;
     return (
       <SafeAreaView>
-        <Success infoText="密码重置成功，请重新登录！" />
+        <Success infoText="注册成功，马上登录体验吧！" />
         <Button
           type="primary"
           value={'现在登录'}
           onPress={() => {
             navigation.navigate('Login');
           }}
-          style={{marginHorizontal: scaleSize(40), marginTop: scaleSize(58)}}
+          style={{marginHorizontal: scaleSize(40),marginTop:scaleSize(58)}}
         />
       </SafeAreaView>
     );
   }
 }
 
-export default injectIntl(Step3);
+export default injectIntl(Step2);

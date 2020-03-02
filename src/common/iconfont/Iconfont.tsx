@@ -12,6 +12,7 @@ const IconSet = createIconSet(glyphMap, 'iconfont', 'iconfont.ttf');
 const styleSheet = StyleSheet.create({
   iconFontContainer: {
     height: scaleSize(48),
+    width: scaleSize(56),
     paddingHorizontal: scaleSize(15),
     alignItems: 'center',
     justifyContent: 'center',
@@ -192,7 +193,7 @@ export const EyeOpen = (props: {
   <Icon
     name="eye-open"
     style={props.style}
-    size={props.size || scaleSize(16)}
+    size={props.size || scaleSize(14)}
     color={props.color}
   />
 );
@@ -205,7 +206,7 @@ export const EyeClose = (props: {
   <Icon
     name="eye-close"
     style={props.style}
-    size={props.size || scaleSize(16)}
+    size={props.size || scaleSize(14)}
     color={props.color}
   />
 );
@@ -278,7 +279,7 @@ export const PasswordFilled = (props: {
   <Icon
     name="password-filled"
     style={props.style}
-    size={props.size || scaleSize(20)}
+    size={props.size || scaleSize(23)}
     color={props.color}
   />
 );

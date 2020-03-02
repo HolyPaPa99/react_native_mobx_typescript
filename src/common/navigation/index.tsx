@@ -1,7 +1,7 @@
 import HomeScreen from '@/screens/home';
 import LoginScreen from '@/screens/login';
 import * as ForgetPassword from '@/screens/forgetPassword';
-import Register from '@/screens/login/Register';
+import * as Register from '@/screens/register';
 import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import Theme from '@/common/theme';
@@ -34,12 +34,20 @@ const RouteConfigs = {
       Step3: ForgetPassword.Step3,
     }),
     navigationOptions: {
-      //headerShown: false,
       headerStyle: {backgroundColor: Theme.Color.Background.Background3},
       headerTintColor: Theme.Color.Font.Font3,
     },
   },
-  Register: Register,
+  Register: {
+    screen: createStackNavigator({
+      Step1: Register.Step1,
+      Step2: Register.Step2,
+    }),
+    navigationOptions: {
+      headerStyle: {backgroundColor: Theme.Color.Background.Background3},
+      headerTintColor: Theme.Color.Font.Font3,
+    },
+  },
 };
 
 const NavigatorConfig = {
