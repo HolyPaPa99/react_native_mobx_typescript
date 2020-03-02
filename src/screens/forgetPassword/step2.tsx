@@ -16,7 +16,7 @@ class Step2 extends React.Component<
 > {
   formRef: any;
   static navigationOptions = {
-    headerShown:false
+    headerShown: false,
   };
   render() {
     Log.info('render forget password step1');
@@ -26,7 +26,10 @@ class Step2 extends React.Component<
       <SafeAreaView>
         <Form ref={(ref: any) => (this.formRef = ref)}>
           <PasswordInput
-            placeholder="请输入密码"
+            placeholder={formatMessage({
+              id: 'intl.input.newpassword.placeholder',
+            })}
+            validator={Validator.PasswordValidator}
             style={{backgroundColor: Theme.Color.Background.Background1}}
           />
           <Separator />
@@ -35,10 +38,10 @@ class Step2 extends React.Component<
           type="primary"
           value={formatMessage({id: 'intl.button.next'})}
           onPress={() => {
-            //if (this.formRef.validateForm()) {
-            Log.info(this.formRef.getFormValues());
-            navigation.navigate('Step3');
-            //}
+            if (this.formRef.validateForm()) {
+              Log.info(this.formRef.getFormValues());
+              navigation.navigate('Step3');
+            }
           }}
           style={{marginHorizontal: scaleSize(40)}}
         />

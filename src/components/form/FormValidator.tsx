@@ -17,3 +17,19 @@ export const PasswordValidator: Validator = (value: string): boolean => {
   }
   return true;
 };
+
+export const UserNameValidator: Validator = (value: string): boolean => {
+  Log.info('UserNameValidator:' + value);
+  if (isEmpty(value)) {
+    throw 'FE003';
+  }
+  return true;
+};
+
+export const PhoneVerifyCodeValidator: Validator = (value: string): boolean => {
+  Log.info('PhoneVerifyCodeValidator:' + value);
+  if (isEmpty(value)) {
+    throw 'FE004';
+  }
+  return true;
+};

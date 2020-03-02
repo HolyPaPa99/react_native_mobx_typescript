@@ -20,10 +20,10 @@ class Step3 extends React.Component<
     const {navigation} = this.props;
     return (
       <SafeAreaView>
-        <Success infoText="密码重置成功，请重新登录！" />
+        <Success infoText={formatMessage({id:'intl.screen.forgetpassword.step3.success'})} />
         <Button
           type="primary"
-          value={'现在登录'}
+          value={formatMessage({id:'intl.button.loginnow'})}
           onPress={() => {
             navigation.navigate('Login');
           }}

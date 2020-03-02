@@ -51,10 +51,17 @@ class Step1 extends React.Component<
           />
           <Separator />
           <TouchableInput
-            label="短信验证码"
-            placeholder="请输入短信验证码"
-            touchableText="发送"
+            label={formatMessage({
+              id: 'intl.input.phoneverifycode.label',
+            })}
+            placeholder={formatMessage({
+              id: 'intl.input.phoneverifycode.placeholder',
+            })}
+            touchableText={formatMessage({
+              id: 'intl.input.phoneverifycode.send',
+            })}
             interval={60}
+            validator={Validator.PhoneVerifyCodeValidator}
             onPress={() => {
               console.log('send');
             }}

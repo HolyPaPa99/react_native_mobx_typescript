@@ -20,10 +20,10 @@ class Step2 extends React.Component<
     const {navigation} = this.props;
     return (
       <SafeAreaView>
-        <Success infoText="注册成功，马上登录体验吧！" />
+        <Success infoText={formatMessage({id:'intl.screen.register.step2.success'})} />
         <Button
           type="primary"
-          value={'现在登录'}
+          value={formatMessage({id:'intl.button.loginnow'})}
           onPress={() => {
             navigation.navigate('Login');
           }}

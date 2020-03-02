@@ -51,20 +51,27 @@ class Step1 extends React.Component<
           />
           <Separator />
           <UserNameInput
-            placeholder="请输入昵称"
+            placeholder={formatMessage({id: 'intl.input.username.placeholder'})}
+            validator={Validator.UserNameValidator}
             style={{backgroundColor: Theme.Color.Background.Background1}}
           />
           <Separator />
           <PasswordInput
-            placeholder="请输入密码"
+            placeholder={formatMessage({id: 'intl.input.password.placeholder'})}
+            validator={Validator.PasswordValidator}
             style={{backgroundColor: Theme.Color.Background.Background1}}
           />
           <Separator />
           <TouchableInput
-            label="短信验证码"
-            placeholder="请输入短信验证码"
-            touchableText="发送"
+            label={formatMessage({id: 'intl.input.phoneverifycode.label'})}
+            placeholder={formatMessage({
+              id: 'intl.input.phoneverifycode.placeholder',
+            })}
+            touchableText={formatMessage({
+              id: 'intl.input.phoneverifycode.send',
+            })}
             interval={60}
+            validator={Validator.PhoneVerifyCodeValidator}
             onPress={() => {
               console.log('send');
             }}
