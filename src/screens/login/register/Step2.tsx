@@ -20,7 +20,7 @@ class Step2 extends React.Component<{[propName: string]: any}, {}> {
           type="primary"
           value={formatMessage({id: 'intl.button.loginnow'})}
           onPress={() => {
-            navigation.navigate('Login');
+            navigation.navigate('LoginScreen');
           }}
           style={{marginHorizontal: scaleSize(40), marginTop: scaleSize(58)}}
         />

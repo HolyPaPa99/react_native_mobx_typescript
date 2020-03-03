@@ -79,7 +79,7 @@ class Step1 extends React.Component<{[propName: string]: any}, {}> {
           onPress={() => {
             if (this.formRef.validateForm()) {
               Log.info(this.formRef.getFormValues());
-              navigation.navigate('Step2');
+              navigation.navigate('Register.Step2');
             }
           }}
           style={{marginHorizontal: scaleSize(40)}}

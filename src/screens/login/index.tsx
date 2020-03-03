@@ -124,9 +124,7 @@ class LoginScreen extends React.Component<any, {}> {
                     }),
                     onPress: () => {
                       console.log('忘记密码');
-                      navigation.navigate('ForgetPassword', {
-                        screen: 'Step1',
-                      });
+                      navigation.navigate('ForgetPassword.Step1');
                     },
                   },
                   {
@@ -135,9 +133,7 @@ class LoginScreen extends React.Component<any, {}> {
                     }),
                     onPress: () => {
                       console.log('注册账号');
-                      navigation.navigate('Register', {
-                        screen: 'Step1',
-                      });
+                      navigation.navigate('Register.Step1');
                     },
                   },
                 ]}
