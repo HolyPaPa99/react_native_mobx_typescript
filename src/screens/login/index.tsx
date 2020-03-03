@@ -6,7 +6,6 @@ import {
   ImageBackground,
   StatusBar,
 } from 'react-native';
-import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
 import {inject} from 'mobx-react';
 
@@ -21,14 +20,8 @@ import TextNavigator from '@/components/navigator/TextNavigator';
 import Theme from '@/common/theme';
 
 @inject('userStore')
-class LoginScreen extends React.Component<
-  {[propName: string]: any} & NavigationStackScreenProps,
-  {}
-> {
+class LoginScreen extends React.Component<any, {}> {
   formRef: any;
-  static navigationOptions = {
-    headerShown: false,
-  };
 
   render() {
     Log.info('render login screen');
@@ -131,8 +124,8 @@ class LoginScreen extends React.Component<
                     }),
                     onPress: () => {
                       console.log('忘记密码');
-                      navigation.navigate('ForgetPassword',{
-                        screen:'Step1'
+                      navigation.navigate('ForgetPassword', {
+                        screen: 'Step1',
                       });
                     },
                   },
@@ -142,8 +135,8 @@ class LoginScreen extends React.Component<
                     }),
                     onPress: () => {
                       console.log('注册账号');
-                      navigation.navigate('Register',{
-                        screen: 'Step1'
+                      navigation.navigate('Register', {
+                        screen: 'Step1',
                       });
                     },
                   },

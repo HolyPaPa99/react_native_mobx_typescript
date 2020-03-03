@@ -1,4 +1,4 @@
 import * as blue from './Blue';
 import * as green from './Green';
 
-export default blue;
+export default green;

@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView, Button} from 'react-native';
-import {NavigationStackScreenProps} from 'react-navigation-stack';
-const HomeScreen = ({navigation}: NavigationStackScreenProps) => {
+const HomeScreen = ({navigation}: any) => {
   return (
     <SafeAreaView>
       <View>

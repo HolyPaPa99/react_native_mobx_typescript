@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, TextInput, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import * as Iconfont from '@/common/iconfont/Iconfont';
 import Theme from '@/common/theme';
 import FormItem, {

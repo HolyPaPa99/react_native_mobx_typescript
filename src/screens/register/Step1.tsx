@@ -1,6 +1,5 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native';
-import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {injectIntl} from 'react-intl';
 
 import {
@@ -18,14 +17,9 @@ import * as Validator from '@/components/form/FormValidator';
 import Log from '@/common/log';
 import Theme from '@/common/theme';
 
-class Step1 extends React.Component<
-  {[propName: string]: any} & NavigationStackScreenProps,
-  {}
-> {
+class Step1 extends React.Component<{[propName: string]: any}, {}> {
   formRef: any;
-  static navigationOptions = {
-    headerShown: false,
-  };
+  
   render() {
     Log.info('render forget password step1');
     const {formatMessage} = this.props.intl;
